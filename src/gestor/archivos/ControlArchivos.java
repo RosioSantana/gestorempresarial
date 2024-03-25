@@ -1,6 +1,6 @@
 package gestor.archivos;
 
-public abstract class ControlArchivos {
+public class ControlArchivos {
     private String archivo;
     public ControlArchivos(String archi){
 
