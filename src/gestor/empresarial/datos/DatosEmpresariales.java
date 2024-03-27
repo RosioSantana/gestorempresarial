@@ -8,8 +8,18 @@ public final class DatosEmpresariales extends DatosPersonales {
     private String telefonoExterior;
     private String puesto;
 
-    public DatosEmpresariales(int d1, String d2, String d3, String d4){
+
+    public DatosEmpresariales(int d1, String adscripcion, String telefonoExterior, String puesto){
+        // Llamar al constructor de la clase base DatosPersonales
+        this.adscripcion = adscripcion;
+        this.telefonoExterior = telefonoExterior;
+        this.puesto = puesto;
+        System.out.println("Datos empresariales");
+        System.out.println("*******************");
+        System.out.println("ingrese el telefono exterior: "+ getTelefonoExterior());
+
     }
+
     void setAdscripcion(String adscripcion){
         this.adscripcion=adscripcion;
     }
