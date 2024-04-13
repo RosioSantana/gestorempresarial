@@ -14,13 +14,6 @@ public final class DatosEmpresariales extends DatosPersonales {
         this.adscripcion = adscripcion;
         this.telefonoExterior = telefonoExterior;
         this.puesto = puesto;
-
-        System.out.println("Datos empresariales");
-        System.out.println("*******************");
-        System.out.println("ingrese el telefono exterior: " + getTelefonoExterior());
-        System.out.println("ingrese el puesto: " + getPuesto());
-        System.out.println("ingrese la adscripcion: " + getAdscripcion());
-        System.out.println("Ayuda");
     }
 
     void setAdscripcion(String adscripcion){

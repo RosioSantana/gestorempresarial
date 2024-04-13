@@ -39,4 +39,12 @@ public abstract class DatosPersonales {
     protected String getWhatsapp() {
         return whatsapp;
     }
+
+// Método para obtener los datos completos
+public String obtenerDatosCompletos() {
+    return "Nombre: " + nombre + "\n" +
+            "Apellidos: " + apellidos + "\n" +
+            "Correo: " + correo + "\n" +
+            "WhatsApp: " + whatsapp;
+}
 }
