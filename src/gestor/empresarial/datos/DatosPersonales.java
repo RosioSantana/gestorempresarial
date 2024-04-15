@@ -2,7 +2,7 @@
 
 //Codigo de datos personales
 package gestor.empresarial.datos;
-public abstract class DatosPersonales {
+public abstract class DatosPersonales { /*le quite el abstract porque no me permitia instanciar*/
     private int id;
     private String nombre;
     private String apellidos;
@@ -12,13 +12,13 @@ public abstract class DatosPersonales {
     protected void setId() {
         this.id = id;
     }
-    protected int getId() {
+    public int getId() { /*cambiado de protected a public*/
         return id;
     }
     protected void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    protected String getNombre() {
+    public String getNombre() { /*cambiado de protected a public*/
         return nombre;
     }
     protected void setApellidos(String apellidos) {

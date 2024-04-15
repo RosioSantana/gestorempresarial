@@ -26,7 +26,7 @@ public class ArchivoTexto implements iFileText {
             this.archivoExistente=false;
         }
     }
-    public void AbrirModoLectura(){//Aqui se implementan los metodos de la interfaz previamente vista}
+    public void AbrirModoLectura(){//Aqui se implementan los metodos de la interfaz previamente vista
         if(archivoExistente){
             try{
                 fr = new FileReader(this.file.getAbsoluteFile());

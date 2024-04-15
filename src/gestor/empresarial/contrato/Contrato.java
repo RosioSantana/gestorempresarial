@@ -7,10 +7,11 @@ public final class Contrato {
     private String horario;
     private Cargos tipoCargo; //del tipo Cargos
 
-    public Contrato (int id){//constructor
+    public Contrato (){//constructor
         tipoCargo = Cargos.temporal;//instanciamos Cargos a traves de tipoCargo
-        /*tipoCargo = Cargos.sindicalizado;//instanciamos Cargos a traves de tipoCargo
-        tipoCargo = Cargos.temporal;//instanciamos Cargos a traves de tipoCargo*/
+        tipoCargo = Cargos.sindicalizado;//instanciamos Cargos a traves de tipoCargo
+        tipoCargo = Cargos.temporal;//instanciamos Cargos a traves de tipoCargo
+
     }
     public void setNoContrato(int noContrato) {
         this.noContrato = noContrato;
@@ -23,5 +24,22 @@ public final class Contrato {
     }
     public int getAnnio() {
         return annio;
+    }
+
+    //creados para que empleado pueda usarlos DUDA
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public Cargos getTipoCargo() {
+        return tipoCargo;
+    }
+
+    public void setTipoCargo(Cargos tipoCargo) {
+        this.tipoCargo = tipoCargo;
     }
 }
