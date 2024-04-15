@@ -1,5 +1,5 @@
 package gestor.empresarial.empresa;
-import gestor.empresarial.empleados.Empleados;
+/*import gestor.empresarial.empleados.Empleados;*/
 import gestor.errores.GestionErrores;
 //Practica 10 Gestor Empresarial
 
@@ -8,7 +8,7 @@ public final class Empresa {
     private String representanteLegal;
     private String telefono;
     private String rfc;
-    public Empleados datosRH;//diagrama datosRH: Empleados
+    //public Empleados datosRH;//diagrama datosRH: Empleados
     public GestionErrores error;
     public Empresa(String e1, String e2){
 

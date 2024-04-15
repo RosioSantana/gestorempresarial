@@ -1,4 +1,4 @@
-package gestor.empresarial.empleados;
+/*package gestor.empresarial.empleados;
 import gestor.empresarial.contrato.*;
 import gestor.empresarial.datos.DatosEmpresariales;
 import gestor.empresarial.datos.DatosPersonales;
@@ -19,16 +19,15 @@ public final class Empleados implements iEmpleados{
         j = 0;
     }
     public void addDatosPersonales(String nombre, String apellidos, String correo){ /*duda porque no puedo instanciar para hacer el add*/
-            if (i < 100) {
+            /*if (i < 100) {
                 DatosPersonas[i] = new DatosEmpresariales((i), nombre, apellidos,correo);
                 i++;
-                System.out.println("Datos personales agregados");
+                System.out.println("Datos personales agregados");/*
             }
             else {
-                System.out.println("No se pueden agregar más postulantes");
+                System.out.println("No se pueden agregar más postulantes");/*
             }
-    }
-    public void addContrato(int noContrato, int annio, String horario, Cargos tipoCargo){
+    }/*ddContrato(int noContrato, int annio, String horario, Cargos tipoCargo){
         if (j < 100) {
                 Contratos[j] = new Contrato();
                 Contratos[j].setNoContrato(noContrato);
@@ -44,16 +43,16 @@ public final class Empleados implements iEmpleados{
     }
 
     private int findEmpleado(int find1){/*buscabdo en datos personales por id*/
-        int busqueda=-1;
+        /*int busqueda=-1;
 
         for (int j=0; j < i ; j++){
             if (DatosPersonas[j].getId()== find1)/*id*/
-                busqueda=j;
+               /* busqueda=j;
         }
         return busqueda;
     }
     private int findEmpleado(String find2){/*nombre*/
-        int busqueda=-1;
+      /*  int busqueda=-1;
 
         for (int j=0; j < this.i ; j++){
             if (DatosPersonas[j].getNombre().equals(find2))
@@ -109,45 +108,44 @@ public final class Empleados implements iEmpleados{
         int i=findEmpleado(id);
         if (i>-1){
             DatosPersonas[i].setAdscripcion(ads); /*public*/
-        }
+        /*}
         System.out.println("No se puede registrar la adscripcion");
     }
     public void setTelefonoExtension(int id, String num){
         int i=findEmpleado(id);
         if (i>-1){
             DatosPersonas[i].setTelefonoExterior(num); /*public*/
-        }
+       /* }
         System.out.println("No se puede registar el numero");
     }
     public void setPuesto(int id, String puest){
         int i=findEmpleado(id);
         if (i>-1){
             DatosPersonas[i].setPuesto(puest); /*public*/
-        }
+      /*  }
         System.out.println("No se puede registar el puesto");
     }
 
     public void showDatosEmpleado() {
         for (int j = 0; i < 100 ; j++){ /*linea agregada con string*/
-            System.out.println(getInfoEmpleado(j));
+            /*System.out.println(getInfoEmpleado(j));
         }
 
     }
     public void showContratosEmpleado(int ce){
         for (int j = 0; i < 100 ; j++){ /*linea agregada con int*/
-            System.out.println(getInfoEmpleado(j));
+         /*   System.out.println(getInfoEmpleado(j));
         }
     }
-    public int getAntiguedad(int id) {/*Antiguedad no esta en ningun lado*/
+    public int getAntiguedad(int id) {Antiguedad no esta en ningun lado
 
         return id;
     }
     public void setCargos(int id, Cargos car){
         int i=findEmpleado(id);
         if (i>-1){
-            Contratos[i].setTipoCargo(car); /*public*/
+            Contratos[i].setTipoCargo(car);
         }
         System.out.println("No se puede colocar el cargo ");
     }
-
-}
+      */

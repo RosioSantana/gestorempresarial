@@ -1,8 +1,8 @@
-//Práctica 8. Gestor Empresarial(Contrato)
-
 package gestor.empresarial.contrato;
 public enum Cargos {//clase de tipo enum llamado cargos
-    confianza, sindicalizado, temporal
+
+    Sindicalizado,confianza, temporal
+
     //definimos estos tres tipos de cargos: estos son los valores de la clase
 }
 
