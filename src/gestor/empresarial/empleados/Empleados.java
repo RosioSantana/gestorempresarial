@@ -12,12 +12,13 @@ public final class Empleados implements iEmpleados {
     private int i;
     private Contrato[] Contratos;
     private int j;
-
+    //private int marca;
     public Empleados() {//constructor
         DatosPersonas = new DatosEmpresariales[100];
         Contratos = new Contrato[100];
         i = 0;
         j = 0;
+        error = new GestionErrores();
     }
 
 
@@ -34,7 +35,7 @@ public final class Empleados implements iEmpleados {
 
     public void addContrato(int id, int noContrato, int annio, String horario, Cargos tipoCargo) {
         Contratos[j] = new Contrato(id);
-        if (j < 100) {
+        if (j < 100) {//mejorar validasion
             Contratos[j].setNoContrato(noContrato);
             Contratos[j].setAnnio(annio);
             Contratos[j].setHorario(horario);
@@ -42,7 +43,8 @@ public final class Empleados implements iEmpleados {
             this.j++;
             System.out.println("Datos del contrato agregados");
         } else {
-            System.out.println("Ya no se aceptan mas contratos");
+
+            //return objError.getError(5);
         }
     }
 
@@ -86,7 +88,8 @@ public final class Empleados implements iEmpleados {
             info += "Puesto: " + (this.DatosPersonas[i].getPuesto() != null ? this.DatosPersonas[i].getPuesto() : "Vacio") + "\n";
             info += "Tipo de Puesto: " + (this.Contratos[i].getTipoCargo() != null ? this.Contratos[0].getTipoCargo() : "Vacio") + "\n";
         }
-        return info;
+        else{
+        return GestionErrores.getError(5);}
     }
 
     @Override

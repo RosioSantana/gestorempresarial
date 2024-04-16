@@ -11,7 +11,7 @@ public final class GestionErrores {
     private ArchivoTexto almacenador;
     public GestionErrores(){
         error = new HashMap<Integer,String>();
-        almacenador = new ArchivoTexto("C:\\Users\\RossS\\Documents\\almacenador");
+        almacenador = new ArchivoTexto("C:\\Users\\RossS\\Documents\\almacenador\\Fallas.txt");
         almacenador.AbrirModoEscritura();
 
     }
@@ -20,6 +20,8 @@ public final class GestionErrores {
         error.put(2, "No guardado");
         error.put(3, "Inexistente");
         error.put(4, "No encontrado");
+        error.put(5, "Imposible almacenar, puestos llenos");
+
     }
     public void setNoError(int folio, String textoerror){
         error.put(folio,textoerror);
@@ -34,4 +36,4 @@ public final class GestionErrores {
     public boolean ExisteError(){
         return false;*/
     }
-}
+
