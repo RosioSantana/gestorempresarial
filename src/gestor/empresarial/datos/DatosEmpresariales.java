@@ -3,10 +3,10 @@
 //Código de datos empresariales
 package gestor.empresarial.datos;
 
-public final class DatosEmpresariales extends DatosPersonales {
-    private String adscripcion;
-    private String telefonoExterior;
-    private String puesto;
+public class DatosEmpresariales extends DatosPersonales {
+    public String adscripcion;
+    public String telefonoExterior;
+    public String puesto;
 
     public DatosEmpresariales(String nombre, String apellidos, String correo) {/*agregado por Rosio*/
         super.setNombre(nombre);
@@ -22,22 +22,22 @@ public final class DatosEmpresariales extends DatosPersonales {
         this.puesto = puesto;
     }
 
-    void setAdscripcion(String adscripcion){
+    public void setAdscripcion(String adscripcion){
         this.adscripcion=adscripcion;
     }
-    String getAdscripcion(){
+    public String getAdscripcion(){
         return adscripcion;
     }
-    void setTelefonoExterior(String telefonoExterior) {
+    public void setTelefonoExterior(String telefonoExterior) {
         this.telefonoExterior = telefonoExterior;
     }
-    String getTelefonoExterior() {
+    public String getTelefonoExterior() {
         return telefonoExterior;
     }
-    void setPuesto(String puesto) {
+    public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
-    String getPuesto() {
+    public String getPuesto() {
         return puesto;
     }
 }

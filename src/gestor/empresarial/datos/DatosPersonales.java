@@ -2,41 +2,41 @@
 
 //Codigo de datos personales
 package gestor.empresarial.datos;
-public abstract class DatosPersonales { /*le quite el abstract porque no me permitia instanciar*/
+public class DatosPersonales { /*le quite el abstract porque no me permitia instanciar*/
     private int id;
     private String nombre;
     private String apellidos;
     private String correo;
     private String whatsapp;
 
-    protected void setId() {
+    public void setId() {
         this.id = id;
     }
     public int getId() { /*cambiado de protected a public*/
         return id;
     }
-    protected void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     public String getNombre() { /*cambiado de protected a public*/
         return nombre;
     }
-    protected void setApellidos(String apellidos) {
+    public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
-    protected String getApellidos() {
+    public String getApellidos() {
         return apellidos;
     }
-    protected void setCorreo(String correo) {
+    public void setCorreo(String correo) {
         this.correo = correo;
     }
-    protected String getCorreo() {
+    public String getCorreo() {
         return correo;
     }
-    protected void setWhatsapp(String whatsapp) {
+    public void setWhatsapp(String whatsapp) {
         this.whatsapp = whatsapp;
     }
-    protected String getWhatsapp() {
+    public String getWhatsapp() {
         return whatsapp;
     }
 
