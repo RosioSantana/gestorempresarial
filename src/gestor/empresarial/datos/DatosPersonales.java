@@ -41,10 +41,5 @@ public class DatosPersonales { /*le quite el abstract porque no me permitia inst
     }
 
 // Método para obtener los datos completos
-public String obtenerDatosCompletos() {
-    return "Nombre: " + nombre + "\n" +
-            "Apellidos: " + apellidos + "\n" +
-            "Correo: " + correo + "\n" +
-            "WhatsApp: " + whatsapp;
-}
+
 }

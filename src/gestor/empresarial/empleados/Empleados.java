@@ -31,6 +31,16 @@ public final class Empleados implements iEmpleados {
             System.out.println("No se pueden agregar más postulantes");
         }
     }
+        //PRUEBA
+    public void addDatosEmpresariales(int Id, String Adscripcion, String TelefonoExterior, String Puesto) { /*duda porque no puedo instanciar para hacer el add*/
+        if (i < 100) {
+            DatosPersonas[i] = new DatosEmpresariales((i),Adscripcion, TelefonoExterior, Puesto);
+            i++;
+            System.out.println("Datos Empresariales agregados");
+        } else {
+            System.out.println("No se pueden agregar más postulantes");
+        }
+    }
 
 
     public void addContrato(int id, int noContrato, int annio, String horario, Cargos tipoCargo) {
