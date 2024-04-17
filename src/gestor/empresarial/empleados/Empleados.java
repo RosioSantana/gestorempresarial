@@ -12,7 +12,7 @@ public final class Empleados implements iEmpleados {
     private int i;
     private Contrato[] Contratos;
     private int j;
-    //private int marca;
+
     public Empleados() {//constructor
         DatosPersonas = new DatosEmpresariales[100];
         Contratos = new Contrato[100];
@@ -43,8 +43,8 @@ public final class Empleados implements iEmpleados {
             this.j++;
             System.out.println("Datos del contrato agregados");
         } else {
-
-            //return objError.getError(5);
+            error.getError(5);
+            //return GestionErrores.getError(5);
         }
     }
 
@@ -89,7 +89,8 @@ public final class Empleados implements iEmpleados {
             info += "Tipo de Puesto: " + (this.Contratos[i].getTipoCargo() != null ? this.Contratos[0].getTipoCargo() : "Vacio") + "\n";
         }
         else{
-        return GestionErrores.getError(5);}
+            error.getError(5);}
+        return info;
     }
 
     @Override
@@ -97,8 +98,8 @@ public final class Empleados implements iEmpleados {
         int i = findEmpleado(empleado);
 
         if (i < 0) {
-            System.out.println("No se pudo encontrar por id - numero");
-            return "";
+            return error.getError(6);
+            //System.out.println("No se pudo encontrar por id - numero");
         } else
             return datosPersonales(i);
     }
@@ -107,8 +108,8 @@ public final class Empleados implements iEmpleados {
         int i = findEmpleado(empleado);
 
         if (i < 0) {
-            System.out.println("No se pudo encontrar por nombre");
-            return "";
+            return error.getError(7);
+            //System.out.println("No se pudo encontrar por nombre");
         } else
             return datosPersonales(i);
     }
@@ -118,7 +119,8 @@ public final class Empleados implements iEmpleados {
         if (i > -1) {
             DatosPersonas[i].setAdscripcion(ads); /*public*/
         }
-        System.out.println("No se puede registrar la adscripcion");
+        error.getError(8);
+        //System.out.println("No se puede registrar la adscripcion");
     }
 
     public void setTelefonoExtension(int id, String num) {
@@ -126,7 +128,8 @@ public final class Empleados implements iEmpleados {
         if (i > -1) {
             DatosPersonas[i].setTelefonoExterior(num); /*public*/
         }
-        System.out.println("No se puede registar el numero");
+        error.getError(9);
+        //System.out.println("No se puede registar el numero");
     }
 
     public void setPuesto(int id, String puest) {
@@ -134,7 +137,8 @@ public final class Empleados implements iEmpleados {
         if (i > -1) {
             DatosPersonas[i].setPuesto(puest); /*public*/
         }
-        System.out.println("No se puede registar el puesto");
+        error.getError(10);
+        //System.out.println("No se puede registar el puesto");
     }
 
     public void showDatosEmpleado() {
@@ -155,6 +159,7 @@ public final class Empleados implements iEmpleados {
         if (i > -1) {
             Contratos[i].setTipoCargo(car);
         }
-        System.out.println("No se puede colocar el cargo ");
+        error.getError(11);
+        //System.out.println("No se puede colocar el cargo ");
     }
 }
