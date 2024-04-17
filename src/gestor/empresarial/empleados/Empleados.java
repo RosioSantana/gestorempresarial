@@ -58,7 +58,7 @@ public final class Empleados implements iEmpleados {
         }
     }
 
-    private int findEmpleado(int find1) {/*buscabdo en datos personales por id*/
+    public int findEmpleado(int find1) {/*buscabdo en datos personales por id*/
         int busqueda = -1;
 
         for (int j = 0; j < i; j++) {
