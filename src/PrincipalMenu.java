@@ -1,5 +1,7 @@
 import gestor.empresarial.empleados.Empleados;
 import gestor.empresarial.empresa.Empresa;
+import gestor.empresarial.contrato.Contrato;
+
 
 import java.util.*;
 
@@ -9,9 +11,11 @@ public class PrincipalMenu {
 
         Scanner entrada = new Scanner(System.in);
         Empleados datos = new Empleados();
+        Contrato con = new Contrato(1);
 
-        //String id;
+
         int op = 0;
+        do{
         System.out.println("Seleccione una opcion: ");
         System.out.println("1) Agregar datos Personales");
         System.out.println("2) Agregar datos Empresariales");
@@ -19,21 +23,26 @@ public class PrincipalMenu {
         System.out.println("4) Agregar Datos Contrato");
         System.out.println("5) Mostrar contrato");
         System.out.println("6) Salir");
-
         System.out.println("Seleccione una opcion: ");
 
         op=entrada.nextInt();
-        switch (op){
+        switch (op) {
             case 1:
-                System.out.println("Ingrese id: ");
-                int id = Integer.parseInt(entrada.nextLine());
-                System.out.println("Ingrese nombre: ");
+                //System.out.println("Ingrese id: ");
+                //int id = entrada.nextInt();;
+
+                System.out.println("Ingrese el nombre: ");
                 String nombre = entrada.nextLine();
+
                 System.out.println("Ingrese apellidos: ");
                 String ap = entrada.nextLine();
+
                 System.out.println("Ingrese el correo: ");
                 String co = entrada.nextLine();
-                datos.addDatosPersonales(id,nombre,ap,co);
+
+
+
+                //datos.addDatosPersonales(1, nombre, ap, co);
                 break;
             case 2:
                 System.out.println("Ingrese la Adscripcion: ");
@@ -43,7 +52,7 @@ public class PrincipalMenu {
                 System.out.println("Ingrese el puesto: ");
                 String Pu = entrada.nextLine();
                 System.out.println("Id es");
-                datos.addDatosEmpresariales(id,ads,Tle,Pu);
+                datos.addDatosEmpresariales(1,ads,Tle,Pu);
                 break;
 
             case 3:
@@ -53,9 +62,23 @@ public class PrincipalMenu {
                 datos.showDatosEmpleado();
                 break;
             case 4:
-                System.out.println("");
+
+                //int id = entrada.nextInt();
+                /*System.out.println("Ingrese numero de contrato:");
+                int cont = entrada.nextInt();
+                System.out.println("Ingrese ingrese annio:");
+                int ann = entrada.nextInt();
+                System.out.println("Ingrese el horario:");
+                String hor = entrada.next();*/
+
+                break;
+            case 5:
+
+                datos.showContratosEmpleado(4);
+                break;
 
 
         }
+        }while(op<6);
     }
 }
