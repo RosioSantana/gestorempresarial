@@ -1,7 +1,6 @@
 package gestor.empresarial.empleados;
 import gestor.empresarial.contrato.*;
 import gestor.empresarial.datos.DatosEmpresariales;
-import gestor.empresarial.datos.DatosPersonales;
 import gestor.errores.GestionErrores;
 
 //modificar diagrama
@@ -23,12 +22,25 @@ public final class Empleados implements iEmpleados {
 
 
     public void addDatosPersonales(int id, String nombre, String apellidos, String correo) { /*duda porque no puedo instanciar para hacer el add*/
-        if (i < 100) {
+        /*if (i < 100) {
             DatosPersonas[i] = new DatosEmpresariales((i), nombre, apellidos, correo);
             i++;
             System.out.println("Datos personales agregados");
         } else {
             System.out.println("No se pueden agregar más postulantes");
+        }*/
+
+        DatosPersonas[i] = new DatosEmpresariales(1, "juan", "perez", "sincorreo");
+        if (i < 100) {//mejorar validacion  id >=0 && id <=j ------------------------------------------------------------
+            DatosPersonas[i].setId();
+            DatosPersonas[i].setNombre(nombre);
+            DatosPersonas[i].setApellidos(apellidos);
+            DatosPersonas[i].setCorreo(correo);
+            this.i++;
+            System.out.println("Datos empresariales agregados");
+        } else {
+            error.getError(5);
+            //return GestionErrores.getError(5);
         }
     }
         //PRUEBA

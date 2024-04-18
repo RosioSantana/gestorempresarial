@@ -28,8 +28,8 @@ public class PrincipalMenu {
         op=entrada.nextInt();
         switch (op) {
             case 1:
-                //System.out.println("Ingrese id: ");
-                //int id = entrada.nextInt();;
+                System.out.println("Ingrese id: ");
+                int id = entrada.nextInt();
 
                 System.out.println("Ingrese el nombre: ");
                 String nombre = entrada.nextLine();
@@ -42,7 +42,7 @@ public class PrincipalMenu {
 
 
 
-                //datos.addDatosPersonales(1, nombre, ap, co);
+                datos.addDatosPersonales(1, nombre, ap, co);
                 break;
             case 2:
                 System.out.println("Ingrese la Adscripcion: ");
