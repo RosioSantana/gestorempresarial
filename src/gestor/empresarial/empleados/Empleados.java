@@ -1,6 +1,7 @@
 package gestor.empresarial.empleados;
 import gestor.empresarial.contrato.*;
 import gestor.empresarial.datos.DatosEmpresariales;
+import gestor.empresarial.datos.DatosPersonales;
 import gestor.errores.GestionErrores;
 
 //modificar diagrama
@@ -21,18 +22,11 @@ public final class Empleados implements iEmpleados {
     }
 
 
-    public void addDatosPersonales(int id, String nombre, String apellidos, String correo) { /*duda porque no puedo instanciar para hacer el add*/
-        /*if (i < 100) {
-            DatosPersonas[i] = new DatosEmpresariales((i), nombre, apellidos, correo);
-            i++;
-            System.out.println("Datos personales agregados");
-        } else {
-            System.out.println("No se pueden agregar más postulantes");
-        }*/
+    public void addDatosPersonales( String nombre, String apellidos, String correo) { /*duda porque no puedo instanciar para hacer el add*/
 
-        DatosPersonas[i] = new DatosEmpresariales(1, "juan", "perez", "sincorreo");
         if (i < 100) {//mejorar validacion  id >=0 && id <=j ------------------------------------------------------------
-            DatosPersonas[i].setId();
+            DatosPersonas[i] = new DatosEmpresariales();
+            DatosPersonas[i].setId(i+1);
             DatosPersonas[i].setNombre(nombre);
             DatosPersonas[i].setApellidos(apellidos);
             DatosPersonas[i].setCorreo(correo);
@@ -40,14 +34,25 @@ public final class Empleados implements iEmpleados {
             System.out.println("Datos empresariales agregados");
         } else {
             error.getError(5);
-            //return GestionErrores.getError(5);
         }
     }
+    public int getId(){
+        return this.i;
+    }
+    public void showDatosPersonales(){
+        for(int k=0; k<i; k++){
+            System.out.println(DatosPersonas[k].getId()+".-"+DatosPersonas[k].getNombre()+".-"+DatosPersonas[k].getApellidos()+".-"+DatosPersonas[k].getCorreo());
+        }
+    }
+
         //PRUEBA
     public void addDatosEmpresariales(int Id, String Adscripcion, String TelefonoExterior, String Puesto) { /*duda porque no puedo instanciar para hacer el add*/
-        if (i < 100) {
-            DatosPersonas[i] = new DatosEmpresariales((i),Adscripcion, TelefonoExterior, Puesto);
-            i++;
+        if (Id >=0 && Id <=this.i) {
+
+            DatosPersonas[Id].setAdscripcion(Adscripcion);
+            DatosPersonas[Id].setTelefonoExterior(TelefonoExterior);
+            DatosPersonas[Id].setPuesto(Puesto);
+
             System.out.println("Datos Empresariales agregados");
         } else {
             System.out.println("No se pueden agregar más postulantes");

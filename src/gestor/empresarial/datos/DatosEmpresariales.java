@@ -8,11 +8,8 @@ public class DatosEmpresariales extends DatosPersonales {
     public String telefonoExterior;
     public String puesto;
 
-    public DatosEmpresariales(int id, String nombre, String apellidos, String correo) {/*agregado por Rosio*/
-        super.setId();
-        super.setNombre(nombre);
-        super.setApellidos(apellidos);
-        super.setCorreo(correo);
+    public DatosEmpresariales() {/*agregado por Rosio*/
+
     }
 
 

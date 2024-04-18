@@ -14,6 +14,7 @@ public class PrincipalMenu {
         Empleados datos = new Empleados();
         Contrato con = new Contrato(1);
 
+
         String id;
         String cont;
         String ann;
@@ -21,19 +22,19 @@ public class PrincipalMenu {
         do{
         System.out.println("Seleccione una opcion: ");
         System.out.println("1) Agregar datos Personales");
-        System.out.println("2) Agregar datos Empresariales");
-        System.out.println("3) Mostrar Datos Empleado");
-        System.out.println("4) Agregar Datos Contrato");
-        System.out.println("5) Mostrar contrato");
-        System.out.println("6) Salir");
+        System.out.println("2) Mostrar datos Personales");
+        System.out.println("3) Agregar datos Empresariales");
+        System.out.println("4) Mostrar Datos Empleado");
+        System.out.println("5) Agregar Datos Contrato");
+        System.out.println("6) Mostrar contrato");
+        System.out.println("7) Salir");
         System.out.println("Seleccione una opcion: ");
 
         op=entrada.nextInt();
         switch (op) {
-            case 1:
+            case 1://1) Agregar datos Personales
                 entrada.nextLine();
-                System.out.println("Ingrese id: ");
-                id = entrada.nextLine();
+
 
                 System.out.println("Ingrese el nombre: ");
                 String nombre = entrada.nextLine();
@@ -44,27 +45,37 @@ public class PrincipalMenu {
                 System.out.println("Ingrese el correo: ");
                 String co = entrada.nextLine();
 
-                datos.addDatosPersonales(Integer.parseInt(id), nombre, ap, co);
-                break;
-            case 2:
-                entrada.nextLine();
-                System.out.println("Ingrese la Adscripcion: ");
-                String ads = entrada.nextLine();
-                System.out.println("Ingrese el Telefono Exterior: ");
-                String Tle = entrada.nextLine();
-                System.out.println("Ingrese el puesto: ");
-                String Pu = entrada.nextLine();
-                System.out.println("Id es");
-                datos.addDatosEmpresariales(1,ads,Tle,Pu);
-                break;
+                datos.addDatosPersonales(nombre, ap, co);
 
-            case 3:
+                System.out.println("Su id asignado es: " + datos.getId());
+                break;
+            case 2://2) Mostrar datos Personales
                 System.out.println("Datos del empleado:");
-                System.out.println("Ingrese el ID:");
 
-                datos.showDatosEmpleado();
+                datos.showDatosPersonales();
                 break;
-            case 4:
+
+            case 3://3) Agregar datos Empresariales
+                entrada.nextLine();
+                System.out.println("Proporciona el Id del aspirante");
+                id = entrada.nextLine();
+
+                if(Integer.parseInt(id)>=0 && Integer.parseInt(id)< i){//duda fffffffffffffffffffffffffffffffffffff
+                    System.out.println("Ingrese la Adscripcion: ");
+                    String ads = entrada.nextLine();
+                    System.out.println("Ingrese el Telefono Exterior: ");
+                    String Tle = entrada.nextLine();
+                    System.out.println("Ingrese el puesto: ");
+                    String Pu = entrada.nextLine();
+
+                    datos.addDatosEmpresariales(Integer.parseInt(id)-1,ads,Tle,Pu);
+                }
+                else{
+                    System.out.println("No valido");
+                }
+
+                break;
+            case 4://4) Mostrar Datos Empleado
                 entrada.nextLine();
                 System.out.println("Proporciona el ID del trabajdor");
                 id = entrada.nextLine();
@@ -105,13 +116,13 @@ public class PrincipalMenu {
                 //4
                 datos.addContrato(Integer.parseInt(id),Integer.parseInt(cont),Integer.parseInt(ann),hor,tipoCargo);
                 break;
-            case 5:
+            case 5: //5) Agregar Datos Contrato
 
                 datos.showContratosEmpleado(4);
                 break;
 
 
         }
-        }while(op<6);
+        }while(op<7);
     }
 }

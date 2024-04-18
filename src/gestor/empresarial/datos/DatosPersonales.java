@@ -9,7 +9,7 @@ public class DatosPersonales { /*le quite el abstract porque no me permitia inst
     private String correo;
     private String whatsapp;
 
-    public void setId() {
+    public void setId(int id) {
         this.id = id;
     }
     public int getId() { /*cambiado de protected a public*/

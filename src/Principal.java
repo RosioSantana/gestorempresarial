@@ -26,7 +26,7 @@ public class Principal {
 
   System.out.print("Ingrese el puesto: ");
   puesto = te.nextLine();
-  DatosEmpresariales datos = new DatosEmpresariales(12, adscripcion, telefonoExterior, puesto);
+  //DatosEmpresariales datos = new DatosEmpresariales(12, adscripcion, telefonoExterior, puesto);
 
 
 
