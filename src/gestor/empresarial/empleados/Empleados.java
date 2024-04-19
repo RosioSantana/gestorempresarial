@@ -149,14 +149,14 @@ public final class Empleados implements iEmpleados {
             return datosPersonales(i);
     }
 
-    public void setAdscripcion() {
+  /*  public void setAdscripcion() {
         int i = findEmpleado(id);
         if (i > -1) {
-            DatosPersonas[i].setAdscripcion(ads); /*public*/
+            DatosPersonas[i].setAdscripcion(); /*public
         }
         error.getError(8);
         //System.out.println("No se puede registrar la adscripcion");
-    }
+    }*/
 
     public void setTelefonoExtension(int id, String num) {
         int i = findEmpleado(id);

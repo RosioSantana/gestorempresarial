@@ -92,7 +92,7 @@ public class PrincipalMenu {
                 id = entrada.nextLine();
 
                 if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {
-                    if (datos.getId() == null){//DatosPersonas[i].getWhatsapp()
+                    if (datos.getInfoEmpleado(id) != null){//DatosPersonas[i].getWhatsapp()
                         System.out.println("no entramos");
 
                     }
