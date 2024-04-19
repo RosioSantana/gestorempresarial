@@ -74,6 +74,7 @@ public class PrincipalMenu {
                 break;
             case 4://4) Mostrar Datos Empleado
                 System.out.println("Los datos empresariales son los siguientes");
+                System.out.println();
                 datos.showDatosEmpleado();
                 break;
 
@@ -105,7 +106,7 @@ public class PrincipalMenu {
                 for (Cargos cargo : Cargos.values()) {
                     System.out.println(cargo.name());
                 }
-                System.out.println("A) Sindicalizado\n B)confianza\n C)temporal\n Seleccione el tipo de cargo:");
+                System.out.println(" A)Sindicalizado\n B)confianza\n C)temporal\n Seleccione el tipo de cargo:");
                 String tipoCargoStr = entrada.nextLine();
                 Cargos tipoCargo = Cargos.Sindicalizado;
                 switch (tipoCargoStr){
@@ -120,7 +121,15 @@ public class PrincipalMenu {
                 datos.showContratosEmpleado(4);
                 break;
 
+            case 6:
+                System.out.println("***Datos Contrato***");
+                datos.showContratosEmpleado(2);
 
+                break;
+
+            case 7:
+                System.out.println("Hasta luego");
+                break;
         }
         }while(op<7);
     }

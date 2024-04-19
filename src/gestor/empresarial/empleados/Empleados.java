@@ -41,7 +41,7 @@ public final class Empleados implements iEmpleados {
     }
     public void showDatosPersonales(){
         for(int k=0; k<i; k++){
-            System.out.println(DatosPersonas[k].getId()+".-"+DatosPersonas[k].getNombre()+".-"+DatosPersonas[k].getApellidos()+".-"+DatosPersonas[k].getCorreo());
+            System.out.println(DatosPersonas[k].getId()+" "+DatosPersonas[k].getNombre()+" "+DatosPersonas[k].getApellidos()+" "+DatosPersonas[k].getCorreo());
         }
     }
 
@@ -56,6 +56,14 @@ public final class Empleados implements iEmpleados {
             System.out.println("Datos Empresariales agregados");
         } else {
             System.out.println("No se pueden agregar más postulantes");
+        }
+    }
+
+    public void showDatosEmpleado() {
+
+        for (int k = 0; k<i; k++) { /*linea agregada con string*/
+            System.out.println(DatosPersonas[k].getId()+" "+DatosPersonas[k].getNombre()+" "+DatosPersonas[k].getApellidos()+" "+DatosPersonas[k].getCorreo());
+            System.out.println(DatosPersonas[k].getAdscripcion()+" "+DatosPersonas[k].getTelefonoExterior()+" "+DatosPersonas[k].getPuesto());
         }
     }
 
@@ -168,16 +176,11 @@ public final class Empleados implements iEmpleados {
         //System.out.println("No se puede registar el puesto");
     }
 
-    public void showDatosEmpleado() {
-        for (int j = 0; i < 100; j++) { /*linea agregada con string*/
-            System.out.println(getInfoEmpleado(j));
-        }
 
-    }
 
     public void showContratosEmpleado(int ce) {
-        for (int j = 0; i < 100; j++) { /*linea agregada con int*/
-            System.out.println(getInfoEmpleado(j));
+        for (int k = 0; k<j; k++) { /*linea agregada con int*/
+            System.out.println(Contratos[j].getNoContrato()+".-"+Contratos[j].getAnnio()+".-"+Contratos[j].getHorario()+".-"+Contratos[j].getTipoCargo());
         }
     }
 
