@@ -1,7 +1,6 @@
 package gestor.empresarial.empleados;
 import gestor.empresarial.contrato.*;
 import gestor.empresarial.datos.DatosEmpresariales;
-import gestor.empresarial.datos.DatosPersonales;
 import gestor.errores.GestionErrores;
 
 //modificar diagrama
@@ -150,7 +149,7 @@ public final class Empleados implements iEmpleados {
             return datosPersonales(i);
     }
 
-    public void setAdscripcion(int id, String ads) {
+    public void setAdscripcion() {
         int i = findEmpleado(id);
         if (i > -1) {
             DatosPersonas[i].setAdscripcion(ads); /*public*/
@@ -179,7 +178,7 @@ public final class Empleados implements iEmpleados {
 
 
 
-    public void showContratosEmpleado(int ce) {
+    public void showContratosEmpleado(int b) {
         for (int k = 0; k<j; k++) { /*linea agregada con int*/
             System.out.println(Contratos[j].getNoContrato()+".-"+Contratos[j].getAnnio()+".-"+Contratos[j].getHorario()+".-"+Contratos[j].getTipoCargo());
         }

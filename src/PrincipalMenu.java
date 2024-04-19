@@ -1,4 +1,5 @@
 import gestor.empresarial.contrato.Cargos;
+import gestor.empresarial.datos.DatosEmpresariales;
 import gestor.empresarial.empleados.Empleados;
 import gestor.empresarial.empresa.Empresa;
 import gestor.empresarial.contrato.Contrato;
@@ -79,50 +80,79 @@ public class PrincipalMenu {
                 break;
 
             case 5: //5) Agregar Datos Contrato
+
+
+
+
+
+
+
                 entrada.nextLine();
                 System.out.println("Proporciona el ID del trabajdor");
                 id = entrada.nextLine();
 
-                System.out.print("Ingrese el ID del contrato: ");
-                int idContrato= entrada.nextInt();
-                int idEmpleado= datos.findEmpleado(idContrato);
-                //int  id;
-                //empleados.findEmpleado(id =0);
-                if (idEmpleado != -1) {
-                    System.out.println("id empleado");
-                    System.out.println(datos.getInfoEmpleado(idEmpleado));
-                } else {
-                    System.out.println("Empleado no encontrado");
-                }
+                if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {
+                    if (datos.getId() == null){//DatosPersonas[i].getWhatsapp()
+                        System.out.println("no entramos");
 
-                entrada.nextLine();
-                System.out.println("Ingrese numero de contrato:");
-                cont = entrada.nextLine();
-                System.out.println("Ingrese ingrese annio:");
-                ann = entrada.nextLine();
-                System.out.println("Ingrese el horario:");
-                String hor = entrada.nextLine();
-                System.out.println("Tipos de cargo disonibles:");
-                for (Cargos cargo : Cargos.values()) {
-                    System.out.println(cargo.name());
-                }
-                System.out.println(" A)Sindicalizado\n B)confianza\n C)temporal\n Seleccione el tipo de cargo:");
-                String tipoCargoStr = entrada.nextLine();
-                Cargos tipoCargo = Cargos.Sindicalizado;
-                switch (tipoCargoStr){
-                    case "A": tipoCargo = Cargos.Sindicalizado; break;
-                    case "B": tipoCargo = Cargos.confianza; break;
-                    case "C": tipoCargo = Cargos.temporal; break;
-                }
+                    }
+                    else {
+                        System.out.println("entramos");
+                        System.out.print("Ingrese el ID del contrato: ");
+                        int idContrato = entrada.nextInt();
+                        int idEmpleado = datos.findEmpleado(idContrato);
+                        //int  id;
+                        //empleados.findEmpleado(id =0);
+                        if (idEmpleado != -1) {
+                            System.out.println("id empleado");
+                            System.out.println(datos.getInfoEmpleado(idEmpleado));
+                        } else {
+                            System.out.println("Empleado no encontrado");
+                        }
 
-                // int temporal = Integer.parseInt(id);
-                //4
-                datos.addContrato(Integer.parseInt(id),Integer.parseInt(cont),Integer.parseInt(ann),hor,tipoCargo);
-                datos.showContratosEmpleado(4);
+                        entrada.nextLine();
+                        System.out.println("Ingrese numero de contrato:");
+                        cont = entrada.nextLine();
+                        System.out.println("Ingrese ingrese annio:");
+                        ann = entrada.nextLine();
+                        System.out.println("Ingrese el horario:");
+                        String hor = entrada.nextLine();
+                        System.out.println("Tipos de cargo disonibles:");
+                        for (Cargos cargo : Cargos.values()) {
+                            System.out.println(cargo.name());
+                        }
+                        System.out.println(" A)Sindicalizado\n B)confianza\n C)temporal\n Seleccione el tipo de cargo:");
+                        String tipoCargoStr = entrada.nextLine();
+                        Cargos tipoCargo = Cargos.Sindicalizado;
+                        switch (tipoCargoStr) {
+                            case "A":
+                                tipoCargo = Cargos.Sindicalizado;
+                                break;
+                            case "B":
+                                tipoCargo = Cargos.confianza;
+                                break;
+                            case "C":
+                                tipoCargo = Cargos.temporal;
+                                break;
+                        }
+
+                        // int temporal = Integer.parseInt(id);
+                        //4
+                        datos.addContrato(Integer.parseInt(id), Integer.parseInt(cont), Integer.parseInt(ann), hor, tipoCargo);
+                        datos.showContratosEmpleado(4);
+
+                    }
+
+
+                }
+                else {
+                    System.out.println("No valido");
+                }
                 break;
 
             case 6:
                 System.out.println("***Datos Contrato***");
+
                 datos.showContratosEmpleado(2);
 
                 break;
