@@ -35,7 +35,6 @@ public class PrincipalMenu {
             case 1://1) Agregar datos Personales
                 entrada.nextLine();
 
-
                 System.out.println("Ingrese el nombre: ");
                 String nombre = entrada.nextLine();
 
@@ -60,21 +59,25 @@ public class PrincipalMenu {
                 System.out.println("Proporciona el Id del aspirante");
                 id = entrada.nextLine();
 
-                if(Integer.parseInt(id)>0 && Integer.parseInt(id)<=datos.getId()){//duda fffffffffffffffffffffffffffffffffffff
+                if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {//duda fffffffffffffffffffffffffffffffffffff
                     System.out.println("Ingrese la Adscripcion: ");
                     String ads = entrada.nextLine();
                     System.out.println("Ingrese el Telefono Exterior: ");
                     String Tle = entrada.nextLine();
                     System.out.println("Ingrese el puesto: ");
                     String Pu = entrada.nextLine();
-                    datos.addDatosEmpresariales(Integer.parseInt(id)-1,ads,Tle,Pu);
-                }
-                else{
+                    datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, Tle, Pu);
+                } else {
                     System.out.println("No valido");
                 }
 
                 break;
             case 4://4) Mostrar Datos Empleado
+                System.out.println("Los datos empresariales son los siguientes");
+                datos.showDatosEmpleado();
+                break;
+
+            case 5: //5) Agregar Datos Contrato
                 entrada.nextLine();
                 System.out.println("Proporciona el ID del trabajdor");
                 id = entrada.nextLine();
@@ -111,12 +114,9 @@ public class PrincipalMenu {
                     case "C": tipoCargo = Cargos.temporal; break;
                 }
 
-               // int temporal = Integer.parseInt(id);
+                // int temporal = Integer.parseInt(id);
                 //4
                 datos.addContrato(Integer.parseInt(id),Integer.parseInt(cont),Integer.parseInt(ann),hor,tipoCargo);
-                break;
-            case 5: //5) Agregar Datos Contrato
-
                 datos.showContratosEmpleado(4);
                 break;
 
