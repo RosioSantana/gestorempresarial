@@ -60,14 +60,13 @@ public class PrincipalMenu {
                 System.out.println("Proporciona el Id del aspirante");
                 id = entrada.nextLine();
 
-                if(Integer.parseInt(id)>=0 && Integer.parseInt(id)< i){//duda fffffffffffffffffffffffffffffffffffff
+                if(Integer.parseInt(id)>0 && Integer.parseInt(id)<=datos.getId()){//duda fffffffffffffffffffffffffffffffffffff
                     System.out.println("Ingrese la Adscripcion: ");
                     String ads = entrada.nextLine();
                     System.out.println("Ingrese el Telefono Exterior: ");
                     String Tle = entrada.nextLine();
                     System.out.println("Ingrese el puesto: ");
                     String Pu = entrada.nextLine();
-
                     datos.addDatosEmpresariales(Integer.parseInt(id)-1,ads,Tle,Pu);
                 }
                 else{
