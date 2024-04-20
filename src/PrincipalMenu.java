@@ -12,7 +12,7 @@ public class PrincipalMenu {
         Scanner entrada = new Scanner(System.in);
         Empleados datos = new Empleados();
         Contrato con = new Contrato(1);
-        //GestionErrores error = new GestionErrores();
+        GestionErrores error = new GestionErrores();
         Empresa pe = new Empresa("1","2");
 
         String nombre;
@@ -36,7 +36,8 @@ public class PrincipalMenu {
         System.out.println("4) Mostrar Datos Empleado");
         System.out.println("5) Agregar Datos Contrato");
         System.out.println("6) Mostrar contrato");
-        System.out.println("7) Salir");
+        System.out.println("7) Empresa");
+        System.out.println("8) Salir");
         System.out.println("Seleccione una opcion: ");
 
         op=entrada.nextInt();
@@ -77,7 +78,8 @@ public class PrincipalMenu {
                     Pu = entrada.nextLine();
                     datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, Tle, Pu);
                 } else {
-                    //error.getError(1);
+                    //error.setNoError(1, "No encontrado");
+                    error.getError(1);
                 }
                 break;
             case 4://4) Mostrar Datos Empleado
@@ -132,7 +134,6 @@ public class PrincipalMenu {
                         }
 
                         datos.addContrato(Integer.parseInt(id), Integer.parseInt(cont), Integer.parseInt(ann), hor, tipoCargo);
-
                     }
 
                 else {
@@ -142,14 +143,13 @@ public class PrincipalMenu {
 
             case 6:
                 System.out.println("***Datos Contrato***");
-
                 datos.showContratosEmpleado(2);
-
                 break;
 
             case 7:
-
+               datos.showEmpresa();
                 break;
+
             case 8:
                 System.out.println("Hasta luego");
                 break;
@@ -157,6 +157,6 @@ public class PrincipalMenu {
             default:
                 System.out.println("Opcion no valida, por favor ingrese alguna de las cuales se le presentan en pantalla");
         }
-        }while(op!=7);
+        }while(op!=8);
     }
 }

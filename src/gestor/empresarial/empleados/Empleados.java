@@ -2,6 +2,7 @@ package gestor.empresarial.empleados;
 import gestor.empresarial.contrato.*;
 import gestor.empresarial.datos.DatosEmpresariales;
 import gestor.errores.GestionErrores;
+import gestor.empresarial.empresa.Empresa;
 
 //modificar diagrama
 //Práctica 9. Gestor Empresarial (Empleado)
@@ -11,6 +12,8 @@ public final class Empleados implements iEmpleados {
     private int i;
     private Contrato[] Contratos;
     private int j;
+    private Empresa[] empresa;
+
 
     public Empleados() {//constructor
         DatosPersonas = new DatosEmpresariales[100];
@@ -66,6 +69,9 @@ public final class Empleados implements iEmpleados {
                             + DatosPersonas[k].getAdscripcion()+" "+DatosPersonas[k].getTelefonoExterior()+" "+DatosPersonas[k].getPuesto());
         }
     }
+    public void addGestionErrores(){
+
+    }
 
 
     public void addContrato(int id, int noContrato, int annio, String horario, Cargos tipoCargo) {
@@ -81,6 +87,12 @@ public final class Empleados implements iEmpleados {
             error.getError(5);
             //return GestionErrores.getError(5);
         }
+    }
+
+    public void showEmpresa(){
+        System.out.println("Nombre de la empresa: ITERA mexico");
+        System.out.println("Telefono: 222-333-568");
+        System.out.println("RFC: ITE22374458A0");
     }
 
     public int findEmpleado(int find1) {/*buscabdo en datos personales por id*/
@@ -125,7 +137,8 @@ public final class Empleados implements iEmpleados {
             info += "Tipo de Puesto: " + (this.Contratos[i].getTipoCargo() != null ? this.Contratos[0].getTipoCargo() : "Vacio") + "\n";
         }
         else{
-            error.getError(5);}
+            error.getError(5);
+        }
         return info;
     }
 
@@ -159,14 +172,14 @@ public final class Empleados implements iEmpleados {
         //System.out.println("No se puede registrar la adscripcion");
     }*/
 
-    public void setTelefonoExtension(int id, String num) {
+   /* public void setTelefonoExtension(int id, String num) {
         int i = findEmpleado(id);
         if (i > -1) {
-            DatosPersonas[i].setTelefonoExterior(num); /*public*/
+            DatosPersonas[i].setTelefonoExterior(num); /*public
         }
         error.getError(9);
         //System.out.println("No se puede registar el numero");
-    }
+    }*/
 
     public void setPuesto(int id, String puest) {
         int i = findEmpleado(id);
