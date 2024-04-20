@@ -3,10 +3,8 @@ import gestor.empresarial.datos.DatosEmpresariales;
 import gestor.empresarial.empleados.Empleados;
 import gestor.empresarial.empresa.Empresa;
 import gestor.empresarial.contrato.Contrato;
-
-
+import gestor.errores.GestionErrores;
 import java.util.*;
-
 
 public class PrincipalMenu {
     public static void main(String[] args){
@@ -14,12 +12,17 @@ public class PrincipalMenu {
         Scanner entrada = new Scanner(System.in);
         Empleados datos = new Empleados();
         Contrato con = new Contrato(1);
+        //GestionErrores error = new GestionErrores();
+        Empresa pe = new Empresa("1","2");
+
+        String nombre;
+        String ap;
+        String co;
 
 
         String ads;
         String Tle;
         String Pu;
-
 
         String id ;
         String cont;
@@ -42,13 +45,13 @@ public class PrincipalMenu {
                 entrada.nextLine();
 
                 System.out.println("Ingrese el nombre: ");
-                String nombre = entrada.nextLine();
+                nombre = entrada.nextLine();
 
                 System.out.println("Ingrese apellidos: ");
-                String ap = entrada.nextLine();
+                ap = entrada.nextLine();
 
                 System.out.println("Ingrese el correo: ");
-                String co = entrada.nextLine();
+                co = entrada.nextLine();
 
                 datos.addDatosPersonales(nombre, ap, co);
 
@@ -74,9 +77,8 @@ public class PrincipalMenu {
                     Pu = entrada.nextLine();
                     datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, Tle, Pu);
                 } else {
-                    System.out.println("No valido");
+                    //error.getError(1);
                 }
-
                 break;
             case 4://4) Mostrar Datos Empleado
                 System.out.println("Los datos empresariales son los siguientes");
@@ -117,7 +119,7 @@ public class PrincipalMenu {
                         System.out.println(" A)Sindicalizado\n B)confianza\n C)temporal\n Seleccione el tipo de cargo:");
                         String tipoCargoStr = entrada.nextLine();
                         Cargos tipoCargo = Cargos.Sindicalizado;
-                        switch (tipoCargoStr) {
+                        switch(tipoCargoStr) {
                             case "A":
                                 tipoCargo = Cargos.Sindicalizado;
                                 break;
@@ -146,9 +148,15 @@ public class PrincipalMenu {
                 break;
 
             case 7:
+
+                break;
+            case 8:
                 System.out.println("Hasta luego");
                 break;
+
+            default:
+                System.out.println("Opcion no valida, por favor ingrese alguna de las cuales se le presentan en pantalla");
         }
-        }while(op<7);
+        }while(op!=7);
     }
 }

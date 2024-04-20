@@ -15,7 +15,7 @@ public final class GestionErrores {
         almacenador.AbrirModoEscritura();
 
     }
-    private void CargarErrores(){
+    public void CargarErrores(){
         error.put(1, "No encontrado");
         error.put(2, "No guardado");
         error.put(3, "Inexistente");
@@ -28,6 +28,7 @@ public final class GestionErrores {
     }
     public String getError(int folio){
         almacenador.Escribir(error.get(folio));
+        CargarErrores();
         return error.get(folio);
     }
     /*public String getErrorTecnico(){
