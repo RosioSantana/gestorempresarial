@@ -113,6 +113,7 @@ public final class Empleados implements iEmpleados {
 
     private String datosPersonales(int dp) {
         String info = "";
+
         if (i > -1) {
             info += "ID: " + DatosPersonas[i].getId() + "\n";
             info += "Nombres: " + DatosPersonas[i].getNombre() + "\n";
@@ -130,7 +131,8 @@ public final class Empleados implements iEmpleados {
 
     @Override
     public String getInfoEmpleado(int empleado) {
-        int i = findEmpleado(empleado);
+
+    int i = findEmpleado(empleado);
 
         if (i < 0) {
             return error.getError(6);
@@ -138,7 +140,6 @@ public final class Empleados implements iEmpleados {
         } else
             return datosPersonales(i);
     }
-
     public String getInfoEmpleado(String empleado) {
         int i = findEmpleado(empleado);
 
@@ -180,7 +181,9 @@ public final class Empleados implements iEmpleados {
 
     public void showContratosEmpleado(int b) {
         for (int k = 0; k<j; k++) { /*linea agregada con int*/
-            System.out.println(Contratos[j].getNoContrato()+".-"+Contratos[j].getAnnio()+".-"+Contratos[j].getHorario()+".-"+Contratos[j].getTipoCargo());
+            if (Contratos[k] != null) {
+                System.out.println(Contratos[k].getNoContrato() + "\n" + Contratos[k].getAnnio() + "\n" + Contratos[k].getHorario() + "\n" + Contratos[k].getTipoCargo());
+            }
         }
     }
 

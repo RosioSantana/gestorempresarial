@@ -16,7 +16,12 @@ public class PrincipalMenu {
         Contrato con = new Contrato(1);
 
 
-        String id;
+        String ads;
+        String Tle;
+        String Pu;
+
+
+        String id ;
         String cont;
         String ann;
         int op = 0;
@@ -62,11 +67,11 @@ public class PrincipalMenu {
 
                 if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {//duda fffffffffffffffffffffffffffffffffffff
                     System.out.println("Ingrese la Adscripcion: ");
-                    String ads = entrada.nextLine();
+                    ads = entrada.nextLine();
                     System.out.println("Ingrese el Telefono Exterior: ");
-                    String Tle = entrada.nextLine();
+                    Tle = entrada.nextLine();
                     System.out.println("Ingrese el puesto: ");
-                    String Pu = entrada.nextLine();
+                    Pu = entrada.nextLine();
                     datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, Tle, Pu);
                 } else {
                     System.out.println("No valido");
@@ -81,35 +86,23 @@ public class PrincipalMenu {
 
             case 5: //5) Agregar Datos Contrato
 
-
-
-
-
-
-
                 entrada.nextLine();
                 System.out.println("Proporciona el ID del trabajdor");
                 id = entrada.nextLine();
 
                 if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {
-                    if (datos.getInfoEmpleado(id) != null){//DatosPersonas[i].getWhatsapp()
-                        System.out.println("no entramos");
 
-                    }
-                    else {
                         System.out.println("entramos");
                         System.out.print("Ingrese el ID del contrato: ");
                         int idContrato = entrada.nextInt();
                         int idEmpleado = datos.findEmpleado(idContrato);
-                        //int  id;
-                        //empleados.findEmpleado(id =0);
+
                         if (idEmpleado != -1) {
                             System.out.println("id empleado");
                             System.out.println(datos.getInfoEmpleado(idEmpleado));
                         } else {
                             System.out.println("Empleado no encontrado");
                         }
-
                         entrada.nextLine();
                         System.out.println("Ingrese numero de contrato:");
                         cont = entrada.nextLine();
@@ -136,15 +129,10 @@ public class PrincipalMenu {
                                 break;
                         }
 
-                        // int temporal = Integer.parseInt(id);
-                        //4
                         datos.addContrato(Integer.parseInt(id), Integer.parseInt(cont), Integer.parseInt(ann), hor, tipoCargo);
-                        datos.showContratosEmpleado(4);
 
                     }
 
-
-                }
                 else {
                     System.out.println("No valido");
                 }

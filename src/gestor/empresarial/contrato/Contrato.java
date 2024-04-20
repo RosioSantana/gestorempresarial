@@ -30,8 +30,8 @@ public final class Contrato {
     public void setAnnio(int annio) {
         this.annio = annio;
     }
-    public int getId(){
-        return id;
+    public int getId(String id){
+        return this.id;
     }
     public int getNoContrato() {
         return noContrato;

@@ -11,7 +11,7 @@ public class Principal {
 
 
   //DATOS EMPRESARIALES //personales
-  Scanner te = new Scanner(System.in);
+ /* Scanner te = new Scanner(System.in);
   String adscripcion;
   String telefonoExterior;
   String puesto;
@@ -49,6 +49,6 @@ public class Principal {
 
   System.out.println("Ingrese el WhatsApp: ");
   whatsapp = scanner.nextLine();
-  DatosPersonales dat;
+  DatosPersonales dat;*/
  }
 }
