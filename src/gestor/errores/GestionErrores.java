@@ -9,7 +9,7 @@ public final class GestionErrores {
 
     public GestionErrores() {
         error = new HashMap<Integer, String>();
-        almacenador = new ArchivoTexto("C:\\Users\\Luis Agustin TH\\Videos\\Almacenador\\Errores.txt");
+        almacenador = new ArchivoTexto("C:\\Users\\RossS\\Documents\\Almacenador\\Fallas.txt");
         almacenador.AbrirModoEscritura();
 
     }
@@ -26,11 +26,8 @@ public final class GestionErrores {
         almacenador.AbrirModoEscritura();
         CargarErrores();
         almacenador.Escribir(error.get(folio));
-
-
         almacenador.Cerrar();
         return error.get(folio);
-
     }
 
 }

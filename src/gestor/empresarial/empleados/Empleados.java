@@ -2,7 +2,6 @@ package gestor.empresarial.empleados;
 import gestor.empresarial.contrato.*;
 import gestor.empresarial.datos.DatosEmpresariales;
 import gestor.errores.GestionErrores;
-import gestor.empresarial.empresa.Empresa;
 
 //modificar diagrama
 //Práctica 9. Gestor Empresarial (Empleado)
@@ -42,11 +41,10 @@ public final class Empleados implements iEmpleados {
     }
     public void showDatosPersonales(){
         for(int k=0; k<i; k++){
-            System.out.println(DatosPersonas[k].getId()+" "+DatosPersonas[k].getNombre()+" "+DatosPersonas[k].getApellidos()+" "+DatosPersonas[k].getCorreo()+" "+DatosPersonas[k].getWhatsapp());
+            System.out.println("Id: " + DatosPersonas[k].getId()+", Nombre: "+DatosPersonas[k].getNombre()+", Apellidos: "+DatosPersonas[k].getApellidos()+", Correo: "+DatosPersonas[k].getCorreo()+", WhatsApp "+DatosPersonas[k].getWhatsapp());
         }
     }
 
-        //PRUEBA
     public void addDatosEmpresariales(int Id, String Adscripcion, String TelefonoExterior, String Puesto) {
         if (Id >=0 && Id <=this.i) {
 
@@ -62,9 +60,8 @@ public final class Empleados implements iEmpleados {
 
     public void showDatosEmpleado() {
         for (int k = 0; k<i; k++) {
-            System.out.println(
-                    DatosPersonas[k].getId()+" "+DatosPersonas[k].getNombre()+" "+DatosPersonas[k].getApellidos()+" "+DatosPersonas[k].getCorreo() +" "+DatosPersonas[k].getWhatsapp()+" "
-                            + DatosPersonas[k].getAdscripcion()+" "+DatosPersonas[k].getTelefonoExterior()+" "+DatosPersonas[k].getPuesto());
+            System.out.println("Id: " + DatosPersonas[k].getId()+", Nombre: "+DatosPersonas[k].getNombre()+", Apellidos: "+DatosPersonas[k].getApellidos()+", Correo: "+DatosPersonas[k].getCorreo()+", WhatsApp: "+DatosPersonas[k].getWhatsapp()
+                    + ", Adscripción: " + DatosPersonas[k].getAdscripcion()+", Telefono exterior: "+DatosPersonas[k].getTelefonoExterior()+", Puesto: "+DatosPersonas[k].getPuesto());
         }
     }
 
@@ -85,8 +82,7 @@ public final class Empleados implements iEmpleados {
     public void showContratosEmpleado(int b) {
         for (int k = 0; k<j; k++) { /*linea agregada con int*/
             if (Contratos[k] != null) {
-                System.out.println(Contratos[k].getNoContrato() + " " + Contratos[k].getAnnio() + " " + Contratos[k].getHorario() + " " + Contratos[k].getTipoCargo()+" "+
-                        DatosPersonas[k].getId());
+                System.out.println("Id empleado: " + DatosPersonas[k].getId() + ", No de contrato: " + Contratos[k].getNoContrato() + ", Año: " + Contratos[k].getAnnio() + ", Horario: " + Contratos[k].getHorario() + ", Cargo: " + Contratos[k].getTipoCargo());
             }
         }
     }
@@ -95,5 +91,5 @@ public final class Empleados implements iEmpleados {
         System.out.println("Telefono: 222-333-568");
         System.out.println("RFC: ITE22374458A0");
     }
-    }
+}
 

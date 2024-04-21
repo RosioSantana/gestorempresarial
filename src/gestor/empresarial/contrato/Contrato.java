@@ -1,4 +1,3 @@
-//Práctica 8. Gestor Empresarial (Contrato)
 package gestor.empresarial.contrato;
 public final class Contrato {
     private int id;

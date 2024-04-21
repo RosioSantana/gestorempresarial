@@ -1,8 +1,5 @@
-import gestor.empresarial.contrato.Cargos;
-import gestor.empresarial.datos.DatosEmpresariales;
-import gestor.empresarial.empleados.Empleados;
-import gestor.empresarial.empresa.Empresa;
-import gestor.empresarial.contrato.Contrato;
+import gestor.empresarial.contrato.*;
+import gestor.empresarial.empleados.*;
 import gestor.errores.GestionErrores;
 import java.util.*;
 
@@ -28,26 +25,28 @@ public class PrincipalMenu {
         String ann;
         int op = 0;
         do{
-        System.out.println("Seleccione una opcion: ");
-        System.out.println("1) Agregar datos Personales");
-        System.out.println("2) Mostrar datos Personales");
-        System.out.println("3) Agregar datos Empresariales");
-        System.out.println("4) Mostrar Datos Empleado");
-        System.out.println("5) Agregar Datos Contrato");
+        System.out.println("\n \nBienvenido al gestor empresarial de la empresa ITERA ");
+        System.out.println(" ----- Menú ----- ");
+        System.out.println("1) Agregar datos personales");
+        System.out.println("2) Mostrar datos personales");
+        System.out.println("3) Agregar datos empresariales");
+        System.out.println("4) Mostrar datos empleado");
+        System.out.println("5) Agregar datos eontrato");
         System.out.println("6) Mostrar contrato");
-        System.out.println("7) Empresa");
+        System.out.println("7) Acerca de la empresa");
         System.out.println("8) Salir");
-        System.out.println("Seleccione una opcion: ");
+        System.out.println("Seleccione una opción: ");
 
         op=entrada.nextInt();
         switch (op) {
             case 1:
+                System.out.println(" ----- Agregar datos personales ----- ");
                 entrada.nextLine();
 
                 System.out.println("Ingrese el nombre: ");
                 nombre = entrada.nextLine();
 
-                System.out.println("Ingrese apellidos: ");
+                System.out.println("Ingrese los apellidos: ");
                 ap = entrada.nextLine();
 
                 System.out.println("Ingrese el correo: ");
@@ -58,20 +57,22 @@ public class PrincipalMenu {
 
                 datos.addDatosPersonales(nombre, ap, co,whats);
 
-                System.out.println("Su id asignado es: " + datos.getId());
+                System.out.println("*****IMPORTANTE: Su id asignado es " + datos.getId());
                 break;
             case 2:
+                System.out.println(" ----- Mostrando datos personales ----- ");
                 System.out.println("Datos del empleado:");
 
                 datos.showDatosPersonales();
                 break;
 
             case 3:
+                System.out.println(" ----- Agregar datos empresariales ----- ");
                 entrada.nextLine();
                 System.out.println("Proporciona el Id del aspirante");
                 id = entrada.nextLine();
 
-                if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {//duda fffffffffffffffffffffffffffffffffffff
+                if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {
                     System.out.println("Ingrese la Adscripcion: ");
                     ads = entrada.nextLine();
                     System.out.println("Ingrese el Telefono Exterior: ");
@@ -85,13 +86,14 @@ public class PrincipalMenu {
                 }
                 break;
             case 4:
+                System.out.println(" ----- Mostrar datos empresariales ----- ");
                 System.out.println("Los datos empresariales son los siguientes");
                 System.out.println();
                 datos.showDatosEmpleado();
                 break;
 
             case 5:
-
+                System.out.println(" ----- Agregar datos del contrato ----- ");
                 entrada.nextLine();
                 System.out.println("Proporciona el ID del trabajdor");
                 id = entrada.nextLine();
@@ -120,10 +122,10 @@ public class PrincipalMenu {
                                 tipoCargo = Cargos.Sindicalizado;
                                 break;
                             case "B":
-                                tipoCargo = Cargos.confianza;
+                                tipoCargo = Cargos.Confianza;
                                 break;
                             case "C":
-                                tipoCargo = Cargos.temporal;
+                                tipoCargo = Cargos.Temporal;
                                 break;
                         }
 
@@ -136,16 +138,17 @@ public class PrincipalMenu {
                 break;
 
             case 6:
-                System.out.println("***Datos Contrato***");
+                System.out.println(" ----- Mostrando datos de los contratos ----- ");
                 datos.showContratosEmpleado(2);
                 break;
 
             case 7:
+                System.out.println(" ----- Sobre ITERA ----- ");
                datos.showEmpresa();
                 break;
 
             case 8:
-                System.out.println("Hasta luego");
+                System.out.println("Cerrando gestor empresarial de ITERA");
                 break;
 
             default:

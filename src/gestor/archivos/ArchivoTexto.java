@@ -1,6 +1,5 @@
 package gestor.archivos;
 import java.io.*;
-import java.util.*;
 public class ArchivoTexto implements iFileText {
     private File file;//atributo con un nuevo tipo aqui se veran los demas atributos
     private FileReader fr;
@@ -10,7 +9,7 @@ public class ArchivoTexto implements iFileText {
     private boolean archivoExistente;
     private boolean modoLectura;
     private boolean modoEscritura;
-    public ArchivoTexto(String tituloArchivo){//constructor
+    public ArchivoTexto(String tituloArchivo){
         try {
             file = new File(tituloArchivo);
 
@@ -22,7 +21,7 @@ public class ArchivoTexto implements iFileText {
             this.modoEscritura = false;
         }
         catch (Exception e){
-            System.out.println("Error al intentar buscar el archivo");
+            System.out.println(" AVISO: Los errores no se guaradaran en un .txt, no se encuentra el archivo");
             this.archivoExistente=false;
         }
     }

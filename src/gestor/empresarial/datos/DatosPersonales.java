@@ -1,6 +1,3 @@
-//Práctica 7. Gestor Empresarial(Datos)
-
-//Codigo de datos personales
 package gestor.empresarial.datos;
 public class DatosPersonales {
     private int id;

@@ -1,6 +1,3 @@
-//Práctica 7. Gestor Empresarial (Datos)
-
-//Código de datos empresariales
 package gestor.empresarial.datos;
 
 public class DatosEmpresariales extends DatosPersonales {
