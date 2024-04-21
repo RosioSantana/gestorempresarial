@@ -2,12 +2,9 @@ package gestor.errores;
 import gestor.archivos.ArchivoTexto;
 
 import java.util.*;
-//Práctica 11. Gestor Empresarial (Gestión de Errores)
+
 public final class GestionErrores {
     private Map<Integer, String> error;
-    private boolean existeError;
-    private int noError;
-    private String descripcionTecnica;
     private ArchivoTexto almacenador;
 
     public GestionErrores() {
@@ -18,16 +15,10 @@ public final class GestionErrores {
     }
 
     public void CargarErrores() {
-        error.put(1, "No encontrado");
-        error.put(2, "No guardado");
-        error.put(3, "Inexistente");
-        error.put(4, "No encontrado");
-        error.put(5, "Imposible almacenar, puestos llenos");
+        error.put(1, "No hay mas vacantes");
+        error.put(2, "Id no encontrado");
+        error.put(3, "Opcion no valida");
 
-    }
-
-    public void setNoError(int folio, String textoerror) {
-        error.put(folio, textoerror);
     }
 
     public String getError(int folio) {
@@ -42,12 +33,4 @@ public final class GestionErrores {
 
     }
 
-    public String getErrorTecnico() {
-        return null;
-    }
-
-    public boolean ExisteError() {
-        return false;
-    }
 }
-

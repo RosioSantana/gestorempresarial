@@ -5,16 +5,14 @@ public final class Contrato {
     private int noContrato;
     private int annio;
     private String horario;
-    private Cargos tipoCargo; //del tipo Cargos
+    private Cargos tipoCargo;
 
     public Contrato (int id){//constructor
         this.id = id;
         this.tipoCargo = Cargos.Sindicalizado;
-        //tipoCargo = Cargos.temporal;//instanciamos Cargos a traves de tipoCargo
-        /*tipoCargo = Cargos.sindicalizado;//instanciamos Cargos a traves de tipoCargo
-        tipoCargo = Cargos.temporal;//instanciamos Cargos a traves de tipoCargo*/
+
     }
-    //aqui meti los metodos de los getter y setter para los campos de contrato
+
     public void setId(int id){
         this.id= id;
     }

@@ -18,7 +18,7 @@ public class PrincipalMenu {
         String nombre;
         String ap;
         String co;
-
+        String whats;
 
         String ads;
         String Tle;
@@ -54,7 +54,10 @@ public class PrincipalMenu {
                 System.out.println("Ingrese el correo: ");
                 co = entrada.nextLine();
 
-                datos.addDatosPersonales(nombre, ap, co);
+                System.out.println("Ingrese el WhatsApp: ");
+                whats = entrada.nextLine();
+
+                datos.addDatosPersonales(nombre, ap, co,whats);
 
                 System.out.println("Su id asignado es: " + datos.getId());
                 break;
@@ -79,7 +82,8 @@ public class PrincipalMenu {
                     datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, Tle, Pu);
                 } else {
                     //error.setNoError(1, "No encontrado");
-                    error.getError(1);
+                    error.getError(2);
+                    System.out.println(error.getError(2));
                 }
                 break;
             case 4://4) Mostrar Datos Empleado
@@ -96,21 +100,13 @@ public class PrincipalMenu {
 
                 if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {
 
-                        System.out.println("entramos");
                         System.out.print("Ingrese el ID del contrato: ");
                         int idContrato = entrada.nextInt();
-                        int idEmpleado = datos.findEmpleado(idContrato);
 
-                        if (idEmpleado != -1) {
-                            System.out.println("id empleado");
-                            System.out.println(datos.getInfoEmpleado(idEmpleado));
-                        } else {
-                            System.out.println("Empleado no encontrado");
-                        }
                         entrada.nextLine();
                         System.out.println("Ingrese numero de contrato:");
                         cont = entrada.nextLine();
-                        System.out.println("Ingrese ingrese annio:");
+                        System.out.println("Ingrese año:");
                         ann = entrada.nextLine();
                         System.out.println("Ingrese el horario:");
                         String hor = entrada.nextLine();
@@ -137,7 +133,7 @@ public class PrincipalMenu {
                     }
 
                 else {
-                    System.out.println("No valido");
+                    System.out.println(error.getError(2));
                 }
                 break;
 
@@ -155,7 +151,7 @@ public class PrincipalMenu {
                 break;
 
             default:
-                System.out.println("Opcion no valida, por favor ingrese alguna de las cuales se le presentan en pantalla");
+                System.out.println(error.getError(3));
         }
         }while(op!=8);
     }

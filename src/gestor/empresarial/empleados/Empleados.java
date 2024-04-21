@@ -12,10 +12,8 @@ public final class Empleados implements iEmpleados {
     private int i;
     private Contrato[] Contratos;
     private int j;
-    private Empresa[] empresa;
 
-
-    public Empleados() {//constructor
+    public Empleados() {
         DatosPersonas = new DatosEmpresariales[100];
         Contratos = new Contrato[100];
         i = 0;
@@ -24,18 +22,19 @@ public final class Empleados implements iEmpleados {
     }
 
 
-    public void addDatosPersonales( String nombre, String apellidos, String correo) { /*duda porque no puedo instanciar para hacer el add*/
+    public void addDatosPersonales( String nombre, String apellidos, String correo,String whatsapp) {
 
-        if (i < 100) {//mejorar validacion  id >=0 && id <=j ------------------------------------------------------------
+        if (i < 100) {
             DatosPersonas[i] = new DatosEmpresariales();
             DatosPersonas[i].setId(i+1);
             DatosPersonas[i].setNombre(nombre);
             DatosPersonas[i].setApellidos(apellidos);
             DatosPersonas[i].setCorreo(correo);
+            DatosPersonas[i].setWhatsapp(whatsapp);
             this.i++;
             System.out.println("Datos empresariales agregados");
         } else {
-            error.getError(5);
+            error.getError(2);
         }
     }
     public int getId(){
@@ -43,12 +42,12 @@ public final class Empleados implements iEmpleados {
     }
     public void showDatosPersonales(){
         for(int k=0; k<i; k++){
-            System.out.println(DatosPersonas[k].getId()+" "+DatosPersonas[k].getNombre()+" "+DatosPersonas[k].getApellidos()+" "+DatosPersonas[k].getCorreo());
+            System.out.println(DatosPersonas[k].getId()+" "+DatosPersonas[k].getNombre()+" "+DatosPersonas[k].getApellidos()+" "+DatosPersonas[k].getCorreo()+" "+DatosPersonas[k].getWhatsapp());
         }
     }
 
         //PRUEBA
-    public void addDatosEmpresariales(int Id, String Adscripcion, String TelefonoExterior, String Puesto) { /*duda porque no puedo instanciar para hacer el add*/
+    public void addDatosEmpresariales(int Id, String Adscripcion, String TelefonoExterior, String Puesto) {
         if (Id >=0 && Id <=this.i) {
 
             DatosPersonas[Id].setAdscripcion(Adscripcion);
@@ -57,22 +56,18 @@ public final class Empleados implements iEmpleados {
 
             System.out.println("Datos Empresariales agregados");
         } else {
-            System.out.println("No se pueden agregar más postulantes");
+            error.getError(2);
         }
     }
 
     public void showDatosEmpleado() {
 
-        for (int k = 0; k<i; k++) { /*linea agregada con string*/
+        for (int k = 0; k<i; k++) {
             System.out.println(
-                    DatosPersonas[k].getId()+" "+DatosPersonas[k].getNombre()+" "+DatosPersonas[k].getApellidos()+" "+DatosPersonas[k].getCorreo() +" "
+                    DatosPersonas[k].getId()+" "+DatosPersonas[k].getNombre()+" "+DatosPersonas[k].getApellidos()+" "+DatosPersonas[k].getCorreo() +" "+DatosPersonas[k].getWhatsapp()+" "
                             + DatosPersonas[k].getAdscripcion()+" "+DatosPersonas[k].getTelefonoExterior()+" "+DatosPersonas[k].getPuesto());
         }
     }
-    public void addGestionErrores(){
-
-    }
-
 
     public void addContrato(int id, int noContrato, int annio, String horario, Cargos tipoCargo) {
         Contratos[j] = new Contrato(id);
@@ -84,128 +79,22 @@ public final class Empleados implements iEmpleados {
             this.j++;
             System.out.println("Datos del contrato agregados");
         } else {
-            error.getError(5);
-            //return GestionErrores.getError(5);
+            error.getError(1);
         }
     }
 
+    public void showContratosEmpleado(int b) {
+        for (int k = 0; k<j; k++) { /*linea agregada con int*/
+            if (Contratos[k] != null) {
+                System.out.println(Contratos[k].getNoContrato() + " " + Contratos[k].getAnnio() + " " + Contratos[k].getHorario() + " " + Contratos[k].getTipoCargo()+" "+
+                        DatosPersonas[k].getId());
+            }
+        }
+    }
     public void showEmpresa(){
         System.out.println("Nombre de la empresa: ITERA mexico");
         System.out.println("Telefono: 222-333-568");
         System.out.println("RFC: ITE22374458A0");
     }
-
-    public int findEmpleado(int find1) {/*buscabdo en datos personales por id*/
-        int busqueda = -1;
-
-        for (int j = 0; j < i; j++) {
-            if (DatosPersonas[j].getId() == find1)/*id*/
-                busqueda = j;
-        }
-        return busqueda;
     }
 
-    private int findEmpleado(String find2) {/*nombre*/
-        int busqueda = -1;
-
-        for (int j = 0; j < this.i; j++) {
-            if (DatosPersonas[j].getNombre().equals(find2))
-                busqueda = j;
-        }
-        return busqueda;
-    }
-
-    public void setWhatsApp(int id, String persona) {
-        int i = findEmpleado(id);
-        if (i > -1) {
-            DatosPersonas[i].setWhatsapp(persona);
-        }
-        System.out.println("No se encuentra el empleado");
-    }
-
-    private String datosPersonales(int dp) {
-        String info = "";
-
-        if (i > -1) {
-            info += "ID: " + DatosPersonas[i].getId() + "\n";
-            info += "Nombres: " + DatosPersonas[i].getNombre() + "\n";
-            info += "Apellidos: " + DatosPersonas[i].getApellidos() + "\n";
-            info += "Correo: " + DatosPersonas[i].getCorreo() + "\n";
-            info += "Whatsapp: " + (this.DatosPersonas[i].getWhatsapp() != null ? this.DatosPersonas[i].getWhatsapp() : "Vacio") + "\n";
-            info += "Adscripción: " + (this.DatosPersonas[i].getAdscripcion() != null ? this.DatosPersonas[i].getAdscripcion() : "Vacio") + "\n";
-            info += "Puesto: " + (this.DatosPersonas[i].getPuesto() != null ? this.DatosPersonas[i].getPuesto() : "Vacio") + "\n";
-            info += "Tipo de Puesto: " + (this.Contratos[i].getTipoCargo() != null ? this.Contratos[0].getTipoCargo() : "Vacio") + "\n";
-        }
-        else{
-            error.getError(5);
-        }
-        return info;
-    }
-
-    @Override
-    public String getInfoEmpleado(int empleado) {
-
-    int i = findEmpleado(empleado);
-
-        if (i < 0) {
-            return error.getError(6);
-            //System.out.println("No se pudo encontrar por id - numero");
-        } else
-            return datosPersonales(i);
-    }
-    public String getInfoEmpleado(String empleado) {
-        int i = findEmpleado(empleado);
-
-        if (i < 0) {
-            return error.getError(7);
-            //System.out.println("No se pudo encontrar por nombre");
-        } else
-            return datosPersonales(i);
-    }
-
-  /*  public void setAdscripcion() {
-        int i = findEmpleado(id);
-        if (i > -1) {
-            DatosPersonas[i].setAdscripcion(); /*public
-        }
-        error.getError(8);
-        //System.out.println("No se puede registrar la adscripcion");
-    }*/
-
-   /* public void setTelefonoExtension(int id, String num) {
-        int i = findEmpleado(id);
-        if (i > -1) {
-            DatosPersonas[i].setTelefonoExterior(num); /*public
-        }
-        error.getError(9);
-        //System.out.println("No se puede registar el numero");
-    }*/
-
-    public void setPuesto(int id, String puest) {
-        int i = findEmpleado(id);
-        if (i > -1) {
-            DatosPersonas[i].setPuesto(puest); /*public*/
-        }
-        error.getError(10);
-        //System.out.println("No se puede registar el puesto");
-    }
-
-
-
-    public void showContratosEmpleado(int b) {
-        for (int k = 0; k<j; k++) { /*linea agregada con int*/
-            if (Contratos[k] != null) {
-                System.out.println(Contratos[k].getNoContrato() + "\n" + Contratos[k].getAnnio() + "\n" + Contratos[k].getHorario() + "\n" + Contratos[k].getTipoCargo());
-            }
-        }
-    }
-
-    public void setCargos(int id, Cargos car) {
-        int i = findEmpleado(id);
-        if (i > -1) {
-            Contratos[i].setTipoCargo(car);
-        }
-        error.getError(11);
-        //System.out.println("No se puede colocar el cargo ");
-    }
-}

@@ -32,7 +32,6 @@ public class ArchivoTexto implements iFileText {
                 fr = new FileReader(this.file.getAbsoluteFile());
                 br = new BufferedReader(this.fr);
                 this.modoLectura = true;
-                System.out.println("Archivo abierto en modo de lectura");
 
             }catch
             (Exception e){
@@ -55,9 +54,9 @@ public class ArchivoTexto implements iFileText {
                 fw = new FileWriter(this.file.getAbsoluteFile(),true);//entre la ruta y el archivo getAbsoluteFile completito
                 bw = new BufferedWriter(this.fw);//BufferedWriter cargar en memoria todo el archivo
                 modoEscritura=true;
-                System.out.println("Archivo abierto en modo lectura");
+
             }catch(Exception e){
-                System.out.println("Error: El archivo no se puede abrir en modo escritura" + e.getMessage());
+
             }
         }
     }

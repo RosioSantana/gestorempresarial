@@ -2,7 +2,7 @@
 
 //Codigo de datos personales
 package gestor.empresarial.datos;
-public class DatosPersonales { /*le quite el abstract porque no me permitia instanciar*/
+public class DatosPersonales {
     private int id;
     private String nombre;
     private String apellidos;
@@ -40,6 +40,5 @@ public class DatosPersonales { /*le quite el abstract porque no me permitia inst
         return whatsapp;
     }
 
-// Método para obtener los datos completos
 
 }
