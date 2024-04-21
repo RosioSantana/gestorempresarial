@@ -1,7 +1,9 @@
 package gestor.archivos;
 import java.io.*;
 public class ArchivoTexto implements iFileText {
-    private File file;//atributo con un nuevo tipo aqui se veran los demas atributos
+    //esta clase nos permite corroborara si existe el archivo de texto, leerlo y escribir en el,
+    // la importancia de esta clase es porque nos permite escribir los errores que se presenten en el programa
+    private File file;
     private FileReader fr;
     private BufferedReader br;
     private FileWriter fw;

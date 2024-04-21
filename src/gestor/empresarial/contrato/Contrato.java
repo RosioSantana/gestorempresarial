@@ -1,5 +1,5 @@
 package gestor.empresarial.contrato;
-public final class Contrato {
+public final class Contrato {//estos gettters and setters nos define que datos podemos pedir para contarto, esta clase nos permite pedir y mostrar dichos datos
     private int id;
     private int noContrato;
     private int annio;

@@ -3,14 +3,14 @@ import gestor.empresarial.empleados.*;
 import gestor.errores.GestionErrores;
 import java.util.*;
 
-public class PrincipalMenu {
+public class PrincipalMenu {//menu principal
     public static void main(String[] args){
 
-        Scanner entrada = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);//lectura desde teclado e instancias
         Empleados datos = new Empleados();
         GestionErrores error = new GestionErrores();
 
-        String nombre;
+        String nombre;//variables para pasar la información
         String ap;
         String co;
         String whats;
@@ -23,7 +23,7 @@ public class PrincipalMenu {
         String cont;
         String ann;
         int op = 0;
-        do{
+        do{//por medio de este do-while con switch logramos mostrar el menú
         System.out.println("\n \nBienvenido al gestor empresarial de la empresa ITERA ");
         System.out.println(" ----- Menú ----- ");
         System.out.println("1) Agregar datos personales");
@@ -37,8 +37,8 @@ public class PrincipalMenu {
         System.out.println("Seleccione una opción: ");
 
         op=entrada.nextInt();
-        switch (op) {
-            case 1:
+        switch (op) {//dependiendo del numero seleccionado usted podra elegir que desea hacer
+            case 1://por ejemplo, aqui leemos lo introducido en el teclado, las variables almacenaran y lo enviaran al arreglo que se encuentra en empleados
                 System.out.println(" ----- Agregar datos personales ----- ");
                 entrada.nextLine();
 
@@ -80,7 +80,7 @@ public class PrincipalMenu {
                     pu = entrada.nextLine();
                     datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, tle, pu);
                 } else {
-                    System.out.println(error.getError(2));
+                    System.out.println(error.getError(2));//muestra error 2 en pantalla
                 }
                 break;
             case 4:
@@ -132,7 +132,7 @@ public class PrincipalMenu {
                     }
 
                 else {
-                    System.out.println(error.getError(2));
+                    System.out.println(error.getError(2));//muestra eeror 2 en pantalla y almacena
                 }
                 break;
 
@@ -151,8 +151,8 @@ public class PrincipalMenu {
                 break;
 
             default:
-                System.out.println(error.getError(3));
+                System.out.println(error.getError(3));//muestra error 3 en pantalla y almacena
         }
-        }while(op!=8);
+        }while(op!=8);//si seleccionamos 8, el ciclo no se ejecutara mas
     }
 }
