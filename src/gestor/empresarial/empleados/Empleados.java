@@ -3,8 +3,6 @@ import gestor.empresarial.contrato.*;
 import gestor.empresarial.datos.DatosEmpresariales;
 import gestor.errores.GestionErrores;
 
-//modificar diagrama
-//Práctica 9. Gestor Empresarial (Empleado)
 public final class Empleados implements iEmpleados {
     public GestionErrores error;
     private DatosEmpresariales[] DatosPersonas;
@@ -33,7 +31,7 @@ public final class Empleados implements iEmpleados {
             this.i++;
             System.out.println("Datos personales agregados");
         } else {
-            //error.getError(2);
+            System.out.println(error.getError(2));
         }
     }
     public int getId(){
@@ -53,8 +51,6 @@ public final class Empleados implements iEmpleados {
             DatosPersonas[Id].setPuesto(Puesto);
 
             System.out.println("Datos Empresariales agregados");
-        } else {
-            //error.getError(2);
         }
     }
 
@@ -67,15 +63,13 @@ public final class Empleados implements iEmpleados {
 
     public void addContrato(int id, int noContrato, int annio, String horario, Cargos tipoCargo) {
         Contratos[j] = new Contrato(id);
-        if (this.j < 100) {//mejorar validasion
+        if (this.j < 100) {
             Contratos[j].setNoContrato(noContrato);
             Contratos[j].setAnnio(annio);
             Contratos[j].setHorario(horario);
             Contratos[j].setTipoCargo(tipoCargo);
             this.j++;
             System.out.println("Datos del contrato agregados");
-        } else {
-            error.getError(1);
         }
     }
 

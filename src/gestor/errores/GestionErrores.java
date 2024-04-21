@@ -9,7 +9,7 @@ public final class GestionErrores {
 
     public GestionErrores() {
         error = new HashMap<Integer, String>();
-        almacenador = new ArchivoTexto("C:\\Users\\Luis Agustin TH\\Videos\\Almacenador\\Errores.txt");
+        almacenador = new ArchivoTexto("C:\\Users\\RossS\\Documents\\Almacenador\\Fallas.txt");
         almacenador.AbrirModoEscritura();
 
     }

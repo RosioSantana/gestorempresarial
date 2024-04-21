@@ -15,30 +15,28 @@ public final class Contrato {
     public void setId(int id){
         this.id= id;
     }
-    public void setNoContrato(int noContrato) {
-        this.noContrato = noContrato;
-    }
-    public void setHorario(String horario){
-        this.horario = horario;
-    }
-    public void setTipoCargo(Cargos tipoCargo){
-        this.tipoCargo = tipoCargo;
-    }
-    public void setAnnio(int annio) {
-        this.annio = annio;
-    }
     public int getId(String id){
         return this.id;
+    }
+    public void setNoContrato(int noContrato) {
+        this.noContrato = noContrato;
     }
     public int getNoContrato() {
         return noContrato;
     }
-    public int getAnnio() {
-        return annio;
+    public void setHorario(String horario){
+        this.horario = horario;
     }
     public String getHorario(){
         return horario;
     }
+    public void setAnnio(int annio) {
+        this.annio = annio;
+    }
+    public int getAnnio() {
+        return annio;
+    }
+    public void setTipoCargo(Cargos tipoCargo){this.tipoCargo = tipoCargo;}
     public Cargos getTipoCargo(){
         return tipoCargo;
     }

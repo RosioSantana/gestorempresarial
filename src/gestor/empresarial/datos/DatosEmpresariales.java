@@ -4,12 +4,6 @@ public class DatosEmpresariales extends DatosPersonales {
     public String adscripcion;
     public String telefonoExterior;
     public String puesto;
-
-    /*public DatosEmpresariales() {/*agregado por Rosio
-
-    }*/
-
-
     public void setAdscripcion(String adscripcion){
         this.adscripcion=adscripcion;
     }

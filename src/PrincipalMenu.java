@@ -8,7 +8,6 @@ public class PrincipalMenu {
 
         Scanner entrada = new Scanner(System.in);
         Empleados datos = new Empleados();
-        Contrato con = new Contrato(1);
         GestionErrores error = new GestionErrores();
 
         String nombre;
@@ -31,8 +30,8 @@ public class PrincipalMenu {
         System.out.println("2) Mostrar datos personales");
         System.out.println("3) Agregar datos empresariales");
         System.out.println("4) Mostrar datos empleado");
-        System.out.println("5) Agregar datos eontrato");
-        System.out.println("6) Mostrar contrato");
+        System.out.println("5) Agregar datos del contrato");
+        System.out.println("6) Mostrar contratos");
         System.out.println("7) Acerca de la empresa");
         System.out.println("8) Salir");
         System.out.println("Seleccione una opción: ");
@@ -69,13 +68,13 @@ public class PrincipalMenu {
             case 3:
                 System.out.println(" ----- Agregar datos empresariales ----- ");
                 entrada.nextLine();
-                System.out.println("Proporciona el Id del aspirante");
+                System.out.println("Proporciona el id del aspirante");
                 id = entrada.nextLine();
 
                 if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {
-                    System.out.println("Ingrese la Adscripcion: ");
+                    System.out.println("Ingrese la adscripcion: ");
                     ads = entrada.nextLine();
-                    System.out.println("Ingrese el Telefono Exterior: ");
+                    System.out.println("Ingrese el telefono exterior: ");
                     Tle = entrada.nextLine();
                     System.out.println("Ingrese el puesto: ");
                     Pu = entrada.nextLine();
@@ -94,29 +93,31 @@ public class PrincipalMenu {
             case 5:
                 System.out.println(" ----- Agregar datos del contrato ----- ");
                 entrada.nextLine();
-                System.out.println("Proporciona el ID del trabajdor");
+                System.out.println("Proporciona el id del trabajador");
                 id = entrada.nextLine();
 
                 if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= datos.getId()) {
 
-                        System.out.print("Ingrese el ID del contrato: ");
+                        System.out.print("Ingrese el id del contrato: ");
                         int idContrato = entrada.nextInt();
 
                         entrada.nextLine();
-                        System.out.println("Ingrese numero de contrato:");
+                        System.out.println("Ingrese número de contrato:");
                         cont = entrada.nextLine();
                         System.out.println("Ingrese año:");
                         ann = entrada.nextLine();
                         System.out.println("Ingrese el horario:");
                         String hor = entrada.nextLine();
-                        System.out.println("Tipos de cargo disonibles:");
+                        System.out.println("Tipos de cargo disponibles:");
                         for (Cargos cargo : Cargos.values()) {
                             System.out.println(cargo.name());
                         }
-                        System.out.println(" A)Sindicalizado\n B)confianza\n C)temporal\n Seleccione el tipo de cargo:");
+                        System.out.println(" A)Sindicalizado\n B)Confianza\n C)Temporal\n Seleccione el tipo de cargo:");
                         String tipoCargoStr = entrada.nextLine();
                         Cargos tipoCargo = Cargos.Sindicalizado;
                         switch(tipoCargoStr) {
+
+
                             case "A":
                                 tipoCargo = Cargos.Sindicalizado;
                                 break;
