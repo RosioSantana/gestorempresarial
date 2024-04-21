@@ -81,7 +81,6 @@ public class PrincipalMenu {
                     Pu = entrada.nextLine();
                     datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, Tle, Pu);
                 } else {
-                    error.getError(2);
                     System.out.println(error.getError(2));
                 }
                 break;

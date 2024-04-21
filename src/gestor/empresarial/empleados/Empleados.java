@@ -33,7 +33,7 @@ public final class Empleados implements iEmpleados {
             this.i++;
             System.out.println("Datos personales agregados");
         } else {
-            error.getError(2);
+            //error.getError(2);
         }
     }
     public int getId(){
@@ -41,7 +41,7 @@ public final class Empleados implements iEmpleados {
     }
     public void showDatosPersonales(){
         for(int k=0; k<i; k++){
-            System.out.println("Id: " + DatosPersonas[k].getId()+", Nombre: "+DatosPersonas[k].getNombre()+", Apellidos: "+DatosPersonas[k].getApellidos()+", Correo: "+DatosPersonas[k].getCorreo()+", WhatsApp "+DatosPersonas[k].getWhatsapp());
+            System.out.println("Id: " + DatosPersonas[k].getId()+", Nombre: "+DatosPersonas[k].getNombre()+", Apellidos: "+DatosPersonas[k].getApellidos()+", Correo: "+DatosPersonas[k].getCorreo()+", WhatsApp: "+DatosPersonas[k].getWhatsapp());
         }
     }
 
@@ -54,7 +54,7 @@ public final class Empleados implements iEmpleados {
 
             System.out.println("Datos Empresariales agregados");
         } else {
-            error.getError(2);
+            //error.getError(2);
         }
     }
 

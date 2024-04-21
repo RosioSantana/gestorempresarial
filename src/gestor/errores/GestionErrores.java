@@ -9,7 +9,7 @@ public final class GestionErrores {
 
     public GestionErrores() {
         error = new HashMap<Integer, String>();
-        almacenador = new ArchivoTexto("C:\\Users\\RossS\\Documents\\Almacenador\\Fallas.txt");
+        almacenador = new ArchivoTexto("C:\\Users\\Luis Agustin TH\\Videos\\Almacenador\\Errores.txt");
         almacenador.AbrirModoEscritura();
 
     }
@@ -18,11 +18,9 @@ public final class GestionErrores {
         error.put(1, "No hay mas vacantes");
         error.put(2, "Id no encontrado");
         error.put(3, "Opcion no valida");
-
     }
 
     public String getError(int folio) {
-
         almacenador.AbrirModoEscritura();
         CargarErrores();
         almacenador.Escribir(error.get(folio));
