@@ -8,18 +8,18 @@ public class DatosEmpresariales extends DatosPersonales {
         this.adscripcion=adscripcion;
     }
     public String getAdscripcion(){
-        return adscripcion;
+        return this.adscripcion;
     }
     public void setTelefonoExterior(String telefonoExterior) {
         this.telefonoExterior = telefonoExterior;
     }
     public String getTelefonoExterior() {
-        return telefonoExterior;
+        return this.telefonoExterior;
     }
     public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
     public String getPuesto() {
-        return puesto;
+        return this.puesto;
     }
 }

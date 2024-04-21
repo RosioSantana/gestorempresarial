@@ -16,8 +16,8 @@ public class PrincipalMenu {
         String whats;
 
         String ads;
-        String Tle;
-        String Pu;
+        String tle;
+        String pu;
 
         String id ;
         String cont;
@@ -75,10 +75,10 @@ public class PrincipalMenu {
                     System.out.println("Ingrese la adscripcion: ");
                     ads = entrada.nextLine();
                     System.out.println("Ingrese el telefono exterior: ");
-                    Tle = entrada.nextLine();
+                    tle = entrada.nextLine();
                     System.out.println("Ingrese el puesto: ");
-                    Pu = entrada.nextLine();
-                    datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, Tle, Pu);
+                    pu = entrada.nextLine();
+                    datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, tle, pu);
                 } else {
                     System.out.println(error.getError(2));
                 }
@@ -100,7 +100,6 @@ public class PrincipalMenu {
 
                         System.out.print("Ingrese el id del contrato: ");
                         int idContrato = entrada.nextInt();
-
                         entrada.nextLine();
                         System.out.println("Ingrese número de contrato:");
                         cont = entrada.nextLine();
