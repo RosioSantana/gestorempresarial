@@ -16,8 +16,8 @@ public final class Empleados implements iEmpleados {
     public Empleados() {
         DatosPersonas = new DatosEmpresariales[100];
         Contratos = new Contrato[100];
-        i = 0;
-        j = 0;
+        this.i = 0;
+        this.j = 0;
         error = new GestionErrores();
     }
 
@@ -32,7 +32,7 @@ public final class Empleados implements iEmpleados {
             DatosPersonas[i].setCorreo(correo);
             DatosPersonas[i].setWhatsapp(whatsapp);
             this.i++;
-            System.out.println("Datos empresariales agregados");
+            System.out.println("Datos personales agregados");
         } else {
             error.getError(2);
         }
@@ -61,7 +61,6 @@ public final class Empleados implements iEmpleados {
     }
 
     public void showDatosEmpleado() {
-
         for (int k = 0; k<i; k++) {
             System.out.println(
                     DatosPersonas[k].getId()+" "+DatosPersonas[k].getNombre()+" "+DatosPersonas[k].getApellidos()+" "+DatosPersonas[k].getCorreo() +" "+DatosPersonas[k].getWhatsapp()+" "
@@ -71,7 +70,7 @@ public final class Empleados implements iEmpleados {
 
     public void addContrato(int id, int noContrato, int annio, String horario, Cargos tipoCargo) {
         Contratos[j] = new Contrato(id);
-        if (j < 100) {//mejorar validasion
+        if (this.j < 100) {//mejorar validasion
             Contratos[j].setNoContrato(noContrato);
             Contratos[j].setAnnio(annio);
             Contratos[j].setHorario(horario);

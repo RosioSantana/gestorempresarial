@@ -13,7 +13,6 @@ public class PrincipalMenu {
         Empleados datos = new Empleados();
         Contrato con = new Contrato(1);
         GestionErrores error = new GestionErrores();
-        Empresa pe = new Empresa("1","2");
 
         String nombre;
         String ap;
@@ -42,7 +41,7 @@ public class PrincipalMenu {
 
         op=entrada.nextInt();
         switch (op) {
-            case 1://1) Agregar datos Personales
+            case 1:
                 entrada.nextLine();
 
                 System.out.println("Ingrese el nombre: ");
@@ -61,13 +60,13 @@ public class PrincipalMenu {
 
                 System.out.println("Su id asignado es: " + datos.getId());
                 break;
-            case 2://2) Mostrar datos Personales
+            case 2:
                 System.out.println("Datos del empleado:");
 
                 datos.showDatosPersonales();
                 break;
 
-            case 3://3) Agregar datos Empresariales
+            case 3:
                 entrada.nextLine();
                 System.out.println("Proporciona el Id del aspirante");
                 id = entrada.nextLine();
@@ -81,18 +80,17 @@ public class PrincipalMenu {
                     Pu = entrada.nextLine();
                     datos.addDatosEmpresariales(Integer.parseInt(id) - 1, ads, Tle, Pu);
                 } else {
-                    //error.setNoError(1, "No encontrado");
                     error.getError(2);
                     System.out.println(error.getError(2));
                 }
                 break;
-            case 4://4) Mostrar Datos Empleado
+            case 4:
                 System.out.println("Los datos empresariales son los siguientes");
                 System.out.println();
                 datos.showDatosEmpleado();
                 break;
 
-            case 5: //5) Agregar Datos Contrato
+            case 5:
 
                 entrada.nextLine();
                 System.out.println("Proporciona el ID del trabajdor");
