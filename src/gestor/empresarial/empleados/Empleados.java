@@ -1,3 +1,4 @@
+//clase empleados
 package gestor.empresarial.empleados;
 import gestor.empresarial.contrato.*;
 import gestor.empresarial.datos.DatosEmpresariales;

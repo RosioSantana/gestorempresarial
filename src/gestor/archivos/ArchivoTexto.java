@@ -1,3 +1,4 @@
+//clase ArchivoTexto
 package gestor.archivos;
 import java.io.*;
 public class ArchivoTexto implements iFileText {

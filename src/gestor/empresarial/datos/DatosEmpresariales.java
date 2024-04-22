@@ -1,3 +1,4 @@
+//Clase DatosEmpresariales
 package gestor.empresarial.datos;
 
 public class DatosEmpresariales extends DatosPersonales {/*Datos empresariales con sus getters and setters nos permite obtener la informacion de

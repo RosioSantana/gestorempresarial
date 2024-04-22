@@ -1,3 +1,5 @@
+//clase DatosPersonales
+
 package gestor.empresarial.datos;
 public class DatosPersonales {//Datos personales con sus getters and setters nos permite obtener la informacion de id,
     // nombre, apellidos, etc y mostralos ya que estos getters and setters se invoca en los add y show ubicados en Empleados
@@ -37,6 +39,4 @@ public class DatosPersonales {//Datos personales con sus getters and setters nos
     public String getWhatsapp() {
         return this.whatsapp;
     }
-
-
 }
